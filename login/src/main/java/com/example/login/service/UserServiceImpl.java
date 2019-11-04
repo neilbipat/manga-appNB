@@ -36,4 +36,9 @@ public class UserServiceImpl implements UserService {
         return new org.springframework.security.core.userdetails.User(user.getUsername(), bCryptPasswordEncoder.encode(user.getPassword()),
                 true, true, true, true, getGrantedAuthorities(user));
     }
+
+    @Override
+    public User getUser(String username) {return userRepository.findByUsername(username); }
+
+    
 }
