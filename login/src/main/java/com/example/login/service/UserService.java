@@ -1,4 +1,4 @@
-package service;
+package com.example.login.service;
 
 import com.example.login.model.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
