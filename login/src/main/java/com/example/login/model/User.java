@@ -24,5 +24,11 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "manga_id")
+    @JsonBackReference
+    private Manga manga;
     
+
+
 }
