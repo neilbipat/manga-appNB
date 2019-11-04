@@ -2,6 +2,7 @@ package com.example.login.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 
@@ -23,9 +24,10 @@ public class Manga {
 
     @Column String manga_page;
 
-    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinColumn(name = "user_id")
-    private User user;
+    @ManyToMany( cascade = {CascadeType.DETACH, CascadeType.PERSIST ,
+    CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn
+    private List<User> user;
 
     public Manga() {}
 
@@ -33,6 +35,10 @@ public class Manga {
      *
      * @return id
      */
+
+    public List<User> getUsers() {return user;}
+
+    public void setUser(User user) {this.user.add(user);}
 
     public Long getId() {return id;}
 

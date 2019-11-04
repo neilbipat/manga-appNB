@@ -27,7 +27,7 @@ public class User {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "manga_id")
     @JsonBackReference
-    private Manga manga;
+    private List<Manga> mangas;
 
 
     public User() {}
@@ -37,12 +37,14 @@ public class User {
      * @return manga
      */
 
-    public Manga getManga() {return manga;}
+    public List<Manga> getMangas() {return mangas;}
 
     /**
      *
      * @return id
      */
+
+    public void setManga(Manga manga) {this.mangas.add(manga);}
 
     public Long getId() {return id;}
 
