@@ -40,5 +40,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUser(String username) {return userRepository.findByUsername(username); }
 
-    
+    private List<GrantedAuthority> getGrantedAuthorities(User user) {
+        List<GrantedAuthority> authorities = new ArrayList<>();
+
+        authorities.add(new SimpleGrantedAuthority(user.getUsername()));
+
+        return authorities;
+    }
+
+   
+
 }
