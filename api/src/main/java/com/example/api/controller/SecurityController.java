@@ -1,4 +1,4 @@
-package com.example.login.controller;
+package com.example.api.controller;
 
 import com.example.login.config.IAuthenticationFacade;
 import org.springframework.beans.factory.annotation.Autowired;

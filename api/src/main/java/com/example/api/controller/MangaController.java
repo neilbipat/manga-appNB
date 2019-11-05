@@ -1,8 +1,8 @@
-package com.example.login.controller;
+package com.example.api.controller;
 
-import com.example.login.model.Manga;
-import com.example.login.repository.UserRepository;
-import com.example.login.service.MangaService;
+import com.example.api.model.Manga;
+import com.example.api.repository.UserRepository;
+import com.example.api.service.MangaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
