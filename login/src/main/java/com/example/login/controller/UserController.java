@@ -52,7 +52,7 @@ public class UserController {
     }
 
     /**
-     * 
+     *
      * @param user
      * @return
      */
