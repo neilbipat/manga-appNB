@@ -6,7 +6,7 @@ public interface MangaService {
 
     /**
      *
-     * @return listMangas
+     * @return listMangas (Users)
      */
 
     public Iterable<Manga> listMangas();
