@@ -9,12 +9,12 @@ import org.springframework.stereotype.Repository;
 public interface MangaRepository extends CrudRepository<Manga, Long> {
 
     /**
-     * 
+     *
      * @param manga_title
      * @return
      */
 
-    @Query("From Manga m Where m.manga_title = ?1 AND m.manga_chapter =?2")
+    @Query("From Manga m Where m.manga_title = ?1")
 
     public Manga findByManga_title(String manga_title);
 
