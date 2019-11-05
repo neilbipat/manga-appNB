@@ -1,4 +1,4 @@
-package com.example.login.model;
+package com.example.api.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;

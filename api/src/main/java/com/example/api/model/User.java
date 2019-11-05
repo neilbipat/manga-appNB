@@ -1,4 +1,4 @@
-package com.example.login.model;
+package com.example.api.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
