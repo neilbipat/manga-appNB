@@ -16,5 +16,5 @@ public interface MangaRepository extends CrudRepository<Manga, Long> {
 
     public List<Manga> findMangasByManga_title(User user);
 
-    public List<Manga> findMangaByManga_chapter(User user;)
+    public List<Manga> findMangaByManga_chapter(User user);
 }

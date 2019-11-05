@@ -1,9 +1,5 @@
 package com.example.login.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -33,22 +29,24 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "manga_id"))
     private List<Manga> mangas;
 
+//    Default Constructor
 
     public User() {}
+
 
     /**
      *
      * @return manga
      */
 
-    public List<Manga> getMangas() {return mangas;}
+    public List<Manga> getManga() {return mangas;}
 
     /**
      *
      * @return id
      */
 
-    public void setManga(Manga manga) {this.mangas.add(manga);}
+    public void setManga(List<Manga> mangas) {this.mangas = mangas;}
 
     public Long getId() {return id;}
 

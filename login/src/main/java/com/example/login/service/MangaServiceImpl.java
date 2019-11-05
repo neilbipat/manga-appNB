@@ -31,7 +31,7 @@ public class MangaServiceImpl implements MangaService {
     public List<Manga> listUserMangaTitle() {
         String username = securityController.getCurrentUserName();
         User user = userRepository.findByUsername(username);
-        return mangaRepository.findMangaByManga_chapter(user);
+        return mangaRepository.findMangasByManga_title(user);
     }
 
     @Override
