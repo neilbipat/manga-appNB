@@ -9,7 +9,7 @@ public interface MangaService {
      * @return listMangas (Users)
      */
 
-    public Iterable<Manga> listMangas();
+    public Iterable<Manga> listUserMangas();
 
     /**
      *
@@ -17,7 +17,7 @@ public interface MangaService {
      * @return
      */
 
-    public Manga getManga_title (String manga_title);
+    public Manga getUserManga_titles (String manga_title);
 
     /**
      *
@@ -25,6 +25,6 @@ public interface MangaService {
      * @return
      */
 
-    public Manga getManga_chapter (String manga_chapter);
+    public Manga getUserManga_chapters (String manga_chapter);
 
 }
