@@ -1,6 +1,7 @@
 package com.example.login.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -32,6 +33,16 @@ public class User {
 //    Default Constructor
 
     public User() {}
+
+
+
+    public List<Manga> addMangasToUser (Manga manga){
+        if(mangas == null)
+            mangas = new ArrayList<>();
+        mangas.add(manga);
+
+        return mangas;
+    }
 
 
     /**

@@ -1,6 +1,8 @@
 package com.example.login.service;
 import com.example.login.config.JwtUtil;
+import com.example.login.model.Manga;
 import com.example.login.model.User;
+import com.example.login.repository.MangaRepository;
 import com.example.login.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,6 +20,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private MangaRepository mangaRepository;
 
     @Autowired
     JwtUtil jwtUtil;
@@ -96,6 +101,25 @@ public class UserServiceImpl implements UserService {
             return jwtUtil.generateToken(userDetails);
         }
         return null;
+
+    }
+
+    /**
+     *
+     * @param username
+     * @param manga_id
+     * @return
+     */
+
+    @Override
+    public Iterable<Manga> addMangasToUser(String username, int manga_id) {
+        Manga manga = mangaRepository.findById(manga_id).get();
+        User user = getUser(username);
+        user.addMangasToUser(manga);
+
+        userRepository.save(user);
+        return user.getManga();
+
     }
 
 }

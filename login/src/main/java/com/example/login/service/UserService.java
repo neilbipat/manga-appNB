@@ -1,9 +1,14 @@
 package com.example.login.service;
 
+import com.example.login.model.Manga;
 import com.example.login.model.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
+import java.util.List;
+
 public interface UserService extends UserDetailsService {
+
+    public Iterable<Manga> addMangasToUser (String username, int manga_id);
 
     /**
      *
