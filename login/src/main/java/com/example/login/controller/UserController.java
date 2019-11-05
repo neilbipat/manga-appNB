@@ -2,6 +2,7 @@ package com.example.login.controller;
 
 import com.example.login.model.User;
 import com.example.login.service.UserService;
+import com.example.login.model.JwtResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
@@ -24,13 +25,6 @@ public class UserController {
     @GetMapping("/listUsers")
     public Iterable<User> listUsers() {return userService.listUsers(); }
 
-    /**
-     *
-     * @return
-     */
-
-    @GetMapping("/listUsers")
-    public Iterable<User> listUsers() {return userService.listUsers(); }
 
     /**
      *
