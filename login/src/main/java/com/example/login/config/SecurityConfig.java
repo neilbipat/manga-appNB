@@ -27,7 +27,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
     UserService userService;
 
     @Autowired
-    private JwtRequestFilter jwtRequestFilter: //Authenticate whether the user exists or not.
+    private JwtRequestFilter jwtRequestFilter; //Authenticate whether the user exists or not.
 
     @Bean("encoder")
 
