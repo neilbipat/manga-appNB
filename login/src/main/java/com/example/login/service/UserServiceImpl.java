@@ -26,6 +26,9 @@ public class UserServiceImpl implements UserService {
     @Qualifier("encoder")
     PasswordEncoder bCryptPasswordEncoder;
 
+    @Override
+    public Iterable<User> listUsers() {return userRepository.findAll();}
+
 
     /**
      *
