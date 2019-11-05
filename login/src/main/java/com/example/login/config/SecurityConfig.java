@@ -21,7 +21,7 @@ import java.util.Collections;
 
 @Configuration // is an analog for XML files, which is used to configure our application with Security features
 @EnableWebSecurity // allows Spring to find configuration class and apply it to global WebSecurity
-public class SecurityConfig  extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     UserService userService;
@@ -29,9 +29,8 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
     @Autowired
     private JwtRequestFilter jwtRequestFilter; //Authenticate whether the user exists or not.
 
+
     @Bean("encoder")
-
-
     public PasswordEncoder encoder() {
         return new BCryptPasswordEncoder();
     }
