@@ -7,7 +7,17 @@ import java.util.List;
 
 public interface MangaService {
 
+    /**
+     *
+     * @return
+     */
+
     public List<Manga> listUserMangaTitle();
+
+    /**
+     *
+     * @return
+     */
 
     public List<Manga> listUserMangaChapter();
 
