@@ -1,4 +1,4 @@
-package com.example.login.service;
+package com.example.api.service;
 import com.example.login.config.JwtUtil;
 import com.example.login.model.Manga;
 import com.example.login.model.User;

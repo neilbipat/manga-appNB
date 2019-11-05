@@ -1,5 +1,5 @@
-package com.example.login.service;
-import com.example.login.model.Manga;
+package com.example.api.service;
+import com.example.api.model.Manga;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
