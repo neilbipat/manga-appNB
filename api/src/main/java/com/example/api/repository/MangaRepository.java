@@ -1,7 +1,7 @@
-package com.example.login.repository;
+package com.example.api.repository;
 
-import com.example.login.model.Manga;
-import com.example.login.model.User;
+import com.example.api.model.Manga;
+import com.example.api.model.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
