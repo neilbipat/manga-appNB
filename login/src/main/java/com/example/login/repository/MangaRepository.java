@@ -14,8 +14,12 @@ public interface MangaRepository extends CrudRepository<Manga, Long> {
      * @return
      */
 
-    @Query("From Manga m Where m.manga_title = ?1")
+    @Query("From Manga m Where m.manga_title = ?1 And m.manga_chapter")
+
 
     public Manga findByManga_title(String manga_title);
+
+
+
 
 }
