@@ -26,6 +26,14 @@ public class UserServiceImpl implements UserService {
     @Qualifier("encoder")
     PasswordEncoder bCryptPasswordEncoder;
 
+
+    /**
+     *
+     * @param username
+     * @return
+     * @throws UsernameNotFoundException
+     */
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = getUser(username);
@@ -36,6 +44,12 @@ public class UserServiceImpl implements UserService {
         return new org.springframework.security.core.userdetails.User(user.getUsername(), bCryptPasswordEncoder.encode(user.getPassword()),
                 true, true, true, true, getGrantedAuthorities(user));
     }
+
+    /**
+     *
+     * @param username
+     * @return
+     */
 
     @Override
     public User getUser(String username) {return userRepository.findByUsername(username); }
@@ -49,6 +63,12 @@ public class UserServiceImpl implements UserService {
         return authorities;
     }
 
+    /**
+     *
+     * @param user
+     * @return
+     */
+
     @Override
     public String login(User user) {
         User returningUser = userRepository.findByUsername(user.getUsername());
@@ -58,6 +78,12 @@ public class UserServiceImpl implements UserService {
         }
         return null;
     }
+
+    /**
+     *
+     * @param newUser
+     * @return
+     */
 
     @Override
     public String createUser(User newUser) {
