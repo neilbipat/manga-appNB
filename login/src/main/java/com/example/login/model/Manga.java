@@ -20,14 +20,12 @@ public class Manga {
     @Column
     private String manga_title;
 
-    @Column String manga_chapter;
+    @Column
+    String manga_chapter;
 
-    @Column String manga_page;
+    @Column
+    String manga_page;
 
-    @ManyToMany( cascade = {CascadeType.DETACH, CascadeType.PERSIST ,
-    CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinColumn
-    private List<User> user;
 
     public Manga() {}
 
@@ -35,10 +33,6 @@ public class Manga {
      *
      * @return id
      */
-
-    public List<User> getUsers() {return user;}
-
-    public void setUser(User user) {this.user.add(user);}
 
     public Long getId() {return id;}
 

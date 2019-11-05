@@ -24,9 +24,13 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "manga_id")
-    @JsonBackReference
+    @ManyToMany( fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH,
+                    CascadeType.MERGE,
+                    CascadeType.REFRESH})
+    @JoinTable(name = "user_manga",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = @JoinColumn(name = "manga_id"))
     private List<Manga> mangas;
 
 
