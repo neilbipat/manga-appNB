@@ -20,6 +20,4 @@ public interface MangaRepository extends CrudRepository<Manga, Long> {
     public Manga findByManga_title(String manga_title);
 
 
-
-
 }
