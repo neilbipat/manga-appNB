@@ -1,9 +1,9 @@
 package com.example.api.service;
-import com.example.login.config.JwtUtil;
-import com.example.login.model.Manga;
-import com.example.login.model.User;
-import com.example.login.repository.MangaRepository;
-import com.example.login.repository.UserRepository;
+import com.example.api.config.JwtUtil;
+import com.example.api.model.Manga;
+import com.example.api.model.User;
+import com.example.api.repository.MangaRepository;
+import com.example.api.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.GrantedAuthority;

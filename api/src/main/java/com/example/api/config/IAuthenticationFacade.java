@@ -1,4 +1,4 @@
-package com.example.login.config;
+package com.example.api.config;
 
 import org.springframework.security.core.Authentication;
 

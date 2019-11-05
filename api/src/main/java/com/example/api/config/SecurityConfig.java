@@ -1,6 +1,6 @@
-package com.example.login.config;
+package com.example.api.config;
 
-import com.example.login.service.UserService;
+import com.example.api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

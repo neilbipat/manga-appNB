@@ -1,7 +1,7 @@
 package com.example.api.service;
 
-import com.example.login.model.Manga;
-import com.example.login.model.User;
+import com.example.api.model.Manga;
+import com.example.api.model.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
