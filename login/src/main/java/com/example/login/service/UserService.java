@@ -8,7 +8,6 @@ import java.util.List;
 
 public interface UserService extends UserDetailsService {
 
-    public Iterable<Manga> addMangasToUser (String username, int manga_id);
 
     /**
      *
@@ -40,4 +39,8 @@ public interface UserService extends UserDetailsService {
 
     public User getUser (String username);
 
+    public Iterable<Manga> addMangasToList(String username, long manga_id);
+
 }
+
+

@@ -34,16 +34,12 @@ public class User {
 
     public User() {}
 
-
-
-    public List<Manga> addMangasToUser (Manga manga){
+    public List<Manga> addMangasToList(Manga manga) {
         if(mangas == null)
             mangas = new ArrayList<>();
-        mangas.add(manga);
 
         return mangas;
     }
-
 
     /**
      *

@@ -112,10 +112,10 @@ public class UserServiceImpl implements UserService {
      */
 
     @Override
-    public Iterable<Manga> addMangasToUser(String username, int manga_id) {
+    public Iterable<Manga> addMangasToList(String username, long manga_id) {
         Manga manga = mangaRepository.findById(manga_id).get();
         User user = getUser(username);
-        user.addMangasToUser(manga);
+        user.addMangasToList(manga);
 
         userRepository.save(user);
         return user.getManga();
