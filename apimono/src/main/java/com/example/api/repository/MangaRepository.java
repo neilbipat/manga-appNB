@@ -31,6 +31,4 @@ public interface MangaRepository extends CrudRepository<Manga, Long> {
 
 
     public List<Manga> findMangaByManga_chapter(User user);
-
 }
-

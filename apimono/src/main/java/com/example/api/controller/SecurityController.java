@@ -15,5 +15,4 @@ public class SecurityController {
         Authentication authentication = authenticationFacade.getAuthentication();
         return authentication.getName();
     }
-
 }

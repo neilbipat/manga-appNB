@@ -1,7 +1,6 @@
 package com.example.api.model;
 
 public class JwtResponse {
-
     private String jwt;
 
     public JwtResponse(String jwt) {
@@ -11,5 +10,4 @@ public class JwtResponse {
     public String getToken() {
         return this.jwt;
     }
-
 }

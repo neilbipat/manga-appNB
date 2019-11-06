@@ -5,10 +5,9 @@ import com.example.api.model.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public interface UserService extends UserDetailsService {
+
 
     /**
      *
@@ -43,3 +42,5 @@ public interface UserService extends UserDetailsService {
     public Iterable<Manga> addMangasToList(String username, long manga_id);
 
 }
+
+

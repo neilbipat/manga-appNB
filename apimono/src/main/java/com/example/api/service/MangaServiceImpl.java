@@ -42,5 +42,4 @@ public class MangaServiceImpl implements MangaService {
 
     }
 
-
 }
