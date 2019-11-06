@@ -4,9 +4,11 @@ import com.example.api.model.Manga;
 import com.example.api.model.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface MangaRepository extends CrudRepository<Manga, Long> {
 
     @Query("FROM Manga m WHERE m.manga_title = ?1")

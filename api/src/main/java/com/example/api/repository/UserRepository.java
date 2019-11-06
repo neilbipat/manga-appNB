@@ -11,13 +11,10 @@ public interface UserRepository extends CrudRepository<User, Long> {
     /**
      *
      * @param username
-     * @param password
      * @return
      */
 
     @Query("FROM User u WHERE u.username = ?1 AND u.password =?2")
 
-
-    public User login(String username, String password);
     public User  findByUsername(String username);
 }

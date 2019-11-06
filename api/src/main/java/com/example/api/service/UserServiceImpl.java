@@ -19,10 +19,10 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserRepository userRepository;
+    UserRepository userRepository;
 
     @Autowired
-    private MangaRepository mangaRepository;
+    MangaRepository mangaRepository;
 
     @Autowired
     JwtUtil jwtUtil;

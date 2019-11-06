@@ -8,17 +8,17 @@ import java.util.List;
 @Table(name = "users")
 public class User {
     @Id
-    @Column
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, name = "username")
     private String username;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, name="email")
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name ="password")
     private String password;
 
     @ManyToMany( fetch = FetchType.LAZY,

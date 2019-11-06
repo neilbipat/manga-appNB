@@ -13,17 +13,17 @@ import java.util.List;
 @Table(name = "manga")
 public class Manga {
     @Id
-    @Column
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "manga_title")
     private String manga_title;
 
-    @Column
+    @Column(name = "manga_chapter")
     String manga_chapter;
 
-    @Column
+    @Column(name = "manga_page")
     String manga_page;
 
 
