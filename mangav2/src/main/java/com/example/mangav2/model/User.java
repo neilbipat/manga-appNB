@@ -58,4 +58,12 @@ public class User {
 
     public void setMangas(List<Mangas> mangas) {this.mangas = mangas;}
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 }
