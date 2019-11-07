@@ -45,4 +45,13 @@ public class User {
         return mangas;
     }
 
+    public List<Mangas> deleteMangasFromList (Manga manga) {
+        try {
+            manga.remove(manga);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return mangas;
+    }
+
 }
