@@ -1,7 +1,9 @@
 package com.example.api.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -24,27 +26,22 @@ public class User {
             cascade = {CascadeType.DETACH,
                     CascadeType.MERGE,
                     CascadeType.REFRESH})
-    @JoinTable(name = "user_manga", joinColumns = {@JoinColumn(name = "user_id")},
-    inverseJoinColumns = {@JoinColumn(name = "manga_id")})
-//    @JoinTable(name = "user_manga",
-//            joinColumns = {@JoinColumn(name = "user_id")},
-//            inverseJoinColumns = {@JoinColumn(name = "manga_id"),
-//                                  @JoinColumn(name = "manga_title"),
-//                                  @JoinColumn(name = "manga_chapter")})
-    private List<Manga> mangas;
+    @JoinColumn(name = "user_id")
+    List<Manga> readStory = new ArrayList<>();
 
-//    Default Constructor
     public User() {}
 
+//    ===========================================
 
-    public List<Manga> getManga() {return mangas;}
+
+    public List<Manga> getManga() {return readStory;}
 
     /**
      *
      * @return id
      */
 
-    public void setManga(List<Manga> mangas) {this.mangas = mangas;}
+    public void setManga(Manga manga) {readStory.add(manga);}
 
     public Long getId() {return id;}
 

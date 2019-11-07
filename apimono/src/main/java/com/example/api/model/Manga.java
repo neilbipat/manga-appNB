@@ -1,6 +1,9 @@
 package com.example.api.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "manga")
@@ -19,9 +22,19 @@ public class Manga {
     @Column(name = "manga_page")
     String manga_page;
 
-    private User user;
+    @ManyToMany( fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH,
+                    CascadeType.MERGE,
+                    CascadeType.REFRESH})
+    @JoinColumn(name = "manga_id")
+    private
+    List<User> manga_read = new ArrayList<>();
 
+//    public List<User> getStoryName() {
+//        return storyName;
+//    }
 
+//========================================================
     public Manga() {}
 
     /**
@@ -80,13 +93,14 @@ public class Manga {
 
     public void setManga_page(String manga_page) {this.manga_page = manga_page;}
 
-    public User getUser() {return user;}
+    public User getUser() {
+        return manga_read.stream()
+                .filter(user -> "James".equals(user.getUsername()))
+                .findAny()
+                .orElse(null);
+    }
 
-    public void setUser(User user) {this.user = user;}
-
-
-
-
-
-
+    public void setUser(User user) {
+        manga_read.add(user);
+    }
 }
