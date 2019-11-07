@@ -36,5 +36,9 @@ public class Mangas {
         this.title = title;
     }
 
+    public String getChapter(String chapter) {
+        this.chapter = chapter;
+    }
+
 
 }
