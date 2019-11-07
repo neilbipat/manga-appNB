@@ -15,13 +15,15 @@ public interface MangaService {
      * @return
      */
 
-    public List<Manga> listMangaTitles();
+    public Iterable<Manga> listAllMangaTitles();
 
     /**
      *
      * @return
      */
 
-    public List<Manga> listMangaChapters();
+    public List<Manga> listUserMangaTitles();
+
+    public List<Manga> listUserMangaChapters();
 
 }
