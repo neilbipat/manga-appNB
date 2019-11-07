@@ -74,4 +74,12 @@ public class User {
         this.username = username;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void getEmail() {
+        return email;
+    }
+
 }
