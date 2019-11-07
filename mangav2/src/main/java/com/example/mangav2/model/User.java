@@ -23,4 +23,17 @@ public class User {
 
     @Column(nullable = false)
     private String password;
+
+    @ManyToMany(fetch = FetchType.LAZY,
+        cascade = {CascadeType.DETACH,
+        CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinTable(name = "user_mangalist",
+                joinColumns = {@JoinColumn(name = "user_id")},
+                inverseJoinColumns = @JoinColumn(name = "manga_id"))
+    private List<Manga> mangas;
+
+    
+//    =========empty constructor ==========//
+    public User() {}
+
 }
