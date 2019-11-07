@@ -54,4 +54,8 @@ public class User {
         return mangas;
     }
 
+    public List<Mangas> getMangas() {return mangas;}
+
+    public void setMangas(List<Mangas> mangas) {this.mangas = mangas;}
+
 }
