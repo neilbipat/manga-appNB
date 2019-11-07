@@ -20,19 +20,7 @@ public interface MangaRepository extends CrudRepository<Manga, Long> {
      */
 
     public List<Manga> findMangaByMangaTitle(User user);
-
-    /**
-     *
-     * @param user
-     * @return
-     */
-
-    @Query("FROM Manga m WHERE m.manga_chapter = ?1")
-
-
-    public List<Manga> findMangaByMangaChapter(User user);
-
-
+    
     // @Query("SELECT manga_id, manga_name, manga_chapter FROM user_manga m WHERE m.title = ?1 AND user_id = ?2
 
 }
