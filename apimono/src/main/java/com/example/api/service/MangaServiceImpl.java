@@ -25,6 +25,14 @@ public class MangaServiceImpl implements MangaService {
     @Autowired
     SecurityController securityController;
 
+    @Override
+    public Manga addManga(Manga newManga) {
+        String username = securityController.getCurrentUserName();
+        User user = userRepository.findByUsername(username);
+        newManga.setUser(user);
+        return mangaRepository.save(newManga);
+    }
+
     /**
      *
      * @return

@@ -19,6 +19,8 @@ public class Manga {
     @Column(name = "manga_page")
     String manga_page;
 
+    private User user;
+
 
     public Manga() {}
 
@@ -77,6 +79,12 @@ public class Manga {
      */
 
     public void setManga_page(String manga_page) {this.manga_page = manga_page;}
+
+    public User getUser() {return user;}
+
+    public void setUser(User user) {this.user = user;}
+
+
 
 
 

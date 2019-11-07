@@ -1,13 +1,14 @@
 package com.example.api.controller;
 
-import com.example.api.model.Manga;
+import com.example.api.model.JwtResponse;
 import com.example.api.model.User;
 import com.example.api.service.UserService;
-import com.example.api.model.JwtResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserController {
@@ -53,11 +54,5 @@ public class UserController {
     public ResponseEntity<?> login(@RequestBody User user) {
         return ResponseEntity.ok(new JwtResponse(userService.login(user)));
     }
-
-    @PutMapping("{username}/add{manga_id}")
-    public Iterable<Manga> addManga(@PathVariable String username, @PathVariable long manga_id) {
-        return userService.addMangasToList(username, manga_id);
-    }
-
 
 }

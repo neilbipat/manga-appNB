@@ -1,6 +1,5 @@
 package com.example.api.service;
 
-import com.example.api.model.Manga;
 import com.example.api.model.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
@@ -38,8 +37,6 @@ public interface UserService extends UserDetailsService {
      */
 
     public User getUser (String username);
-
-    public Iterable<Manga> addMangasToList(String username, long manga_id);
 
 }
 

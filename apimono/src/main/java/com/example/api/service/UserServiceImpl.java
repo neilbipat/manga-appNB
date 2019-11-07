@@ -104,22 +104,4 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    /**
-     *
-     * @param username
-     * @param manga_id
-     * @return
-     */
-
-    @Override
-    public Iterable<Manga> addMangasToList(String username, long manga_id) {
-        Manga manga = mangaRepository.findById(manga_id).get();
-        User user = getUser(username);
-        user.addMangasToList(manga);
-
-        userRepository.save(user);
-        return user.getManga();
-
-    }
-
 }
