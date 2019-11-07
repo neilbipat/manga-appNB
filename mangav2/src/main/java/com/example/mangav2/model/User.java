@@ -25,6 +25,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+
     @ManyToMany(fetch = FetchType.LAZY,
         cascade = {CascadeType.DETACH,
         CascadeType.MERGE, CascadeType.REFRESH})
@@ -34,8 +35,14 @@ public class User {
     private List<Manga> mangas;
 
 
-//    =========empty constructor ==========//
+
     public User() {}
+
+    /**
+     *
+     * @param manga
+     * @return
+     */
 
     public Manga<Mangas> addMangaToList (Mangas manga) {
         if(mangas == null)
@@ -44,6 +51,13 @@ public class User {
 
         return mangas;
     }
+
+    /**
+     *
+     * @param manga
+     * @return
+     */
+
 
     public List<Mangas> deleteMangasFromList (Manga manga) {
         try {
@@ -54,37 +68,89 @@ public class User {
         return mangas;
     }
 
+    /**
+     *
+     * @return
+     */
+
+
     public List<Mangas> getMangas() {return mangas;}
 
+    /**
+     *
+     * @param mangas
+     */
+
     public void setMangas(List<Mangas> mangas) {this.mangas = mangas;}
+
+
+    /**
+     *
+     * @return
+     */
 
     public Long getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
+
     public void setId(Long id) {
         this.id = id;
     }
+
+    /**
+     *
+     * @return
+     */
 
     public String getUsername() {
         return username;
     }
 
+    /**
+     *
+     * @param username
+     */
+
     public void setUsername(String username) {
         this.username = username;
     }
+
+    /**
+     *
+     * @return
+     */
 
     public String getEmail() {
         return email;
     }
 
+    /**
+     *
+     * @param email
+     */
+
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     *
+     * @return
+     */
+
     public String getPassword() {
         return password;
     }
+
+    /**
+     * 
+     * @param password
+     */
 
     public void setPassword(String password) {
         this.password = password;
