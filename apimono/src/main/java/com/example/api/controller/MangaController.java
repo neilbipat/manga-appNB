@@ -18,9 +18,9 @@ public class MangaController {
     MangaService mangaService;
 
     @GetMapping("/listUserMangaTitle")
-    public List<Manga>   listUserMangaTitle() {return mangaService.listUserMangaTitle(); }
+    public List<Manga>   listUserMangaTitle() {return mangaService.listMangaTitles(); }
 
     @GetMapping("/listUserMangaChapter")
-    public List<Manga> listUserMangaChapter() {return mangaService.listUserMangaChapter(); }
+    public List<Manga> listUserMangaChapter() {return mangaService.listMangaChapters(); }
 
 }

@@ -25,11 +25,13 @@ public class User {
             cascade = {CascadeType.DETACH,
                     CascadeType.MERGE,
                     CascadeType.REFRESH})
-    @JoinTable(name = "user_manga",
-            joinColumns = {@JoinColumn(name = "user_id")},
-            inverseJoinColumns = {@JoinColumn(name = "manga_id"),
-                                  @JoinColumn(name = "manga_title"),
-                                  @JoinColumn(name = "manga_chapter")})
+    @JoinTable(name = "user_manga", joinColumns = {@JoinColumn(name = "user_id")},
+    inverseJoinColumns = {@JoinColumn(name = "manga_id")})
+//    @JoinTable(name = "user_manga",
+//            joinColumns = {@JoinColumn(name = "user_id")},
+//            inverseJoinColumns = {@JoinColumn(name = "manga_id"),
+//                                  @JoinColumn(name = "manga_title"),
+//                                  @JoinColumn(name = "manga_chapter")})
     private List<Manga> mangas;
 
 //    Default Constructor
