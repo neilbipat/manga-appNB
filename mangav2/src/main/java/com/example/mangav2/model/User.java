@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -32,8 +33,16 @@ public class User {
                 inverseJoinColumns = @JoinColumn(name = "manga_id"))
     private List<Manga> mangas;
 
-    
+
 //    =========empty constructor ==========//
     public User() {}
+
+    public Manga<Mangas> addMangaToList (Mangas manga) {
+        if(mangas == null)
+            mangas = new ArrayList<>();
+        mangas.add(manga);
+
+        return mangas;
+    }
 
 }
