@@ -25,9 +25,18 @@ public class MangaServiceImpl implements MangaService {
     @Autowired
     SecurityController securityController;
 
+    /**
+     *
+     * @return
+     */
+
    @Override
     public Iterable<Manga>  listAllMangaTitles() {return mangaRepository.findAll();}
 
-    
+    public List<Manga> listUserMangaTitles() {
+       String username = securityController.getCurrentUserName();
+       User user = userRepository.findByUsername(username);
+       return mangaRepository.findMangTitlesByUser(user);
+    }
 
 }
