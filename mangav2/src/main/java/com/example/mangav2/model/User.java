@@ -32,7 +32,7 @@ public class User {
     @JoinTable(name = "user_mangalist",
                 joinColumns = {@JoinColumn(name = "user_id")},
                 inverseJoinColumns = @JoinColumn(name = "manga_id"))
-    private List<Manga> mangas;
+    private List<Mangas> mangas;
 
 
 
@@ -44,7 +44,7 @@ public class User {
      * @return
      */
 
-    public Manga<Mangas> addMangaToList (Mangas manga) {
+    public List<Mangas> addMangaToList (Mangas manga) {
         if(mangas == null)
             mangas = new ArrayList<>();
         mangas.add(manga);
@@ -59,9 +59,9 @@ public class User {
      */
 
 
-    public List<Mangas> deleteMangasFromList (Manga manga) {
+    public List<Mangas> deleteMangasFromList (Mangas manga) {
         try {
-            manga.remove(manga);
+            mangas.remove(manga);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
