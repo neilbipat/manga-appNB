@@ -5,5 +5,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 
-public class UserService {
+public interface UserService extends UserDetailsService {
+
+    public String createUser(User newUser);
+
+    public String login(User user);
+
+    public Iterable<Mangas> addMangasToUserList(String username, int manga_id);
+
+    public Iterable<Mangas> deleteMangasFromUserList(String username, int manga_id);
+
 }
