@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class UserController {
     @Autowired
@@ -34,7 +36,8 @@ public class UserController {
         return userService.deleteMangasFromUserList(username, manga_id);
     }
 
-
+    @GetMapping("/listUserPosts")
+    public List<Mangas> listUserMangaList() {return userService.listUserMangaList(); }
 
 }
 
