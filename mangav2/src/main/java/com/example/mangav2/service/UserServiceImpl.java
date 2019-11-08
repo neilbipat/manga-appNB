@@ -34,6 +34,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     JwtUtil jwtUtil;
 
-    
+    @Autowired
+    @Qualifier("encoder")
+    PasswordEncoder bCryptPasswordEncoder;
 
 }
