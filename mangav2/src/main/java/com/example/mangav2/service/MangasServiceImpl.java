@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.example.mangav2.model.Mangas;
 import com.example.mangav2.repository.MangasRepository;
 
-public class MangasServiceImpl {
+public class MangasServiceImpl implements MangasService {
 
     @Autowired
     MangasRepository mangasRepository;
