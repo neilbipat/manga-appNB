@@ -7,4 +7,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MangaController {
+
+    @Autowired
+    MangasService mangasService;
+
+    @PostMapping("/manga/add")
+    public Mangas addManga(@RequestBody Mangas newManga) {
+        return mangasService.addMangaToDB(newManga);
+    }
+
 }
