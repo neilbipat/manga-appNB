@@ -93,5 +93,14 @@ public class UserServiceImpl implements UserService {
         return user.getMangas();
     }
 
+    public Iterable<Mangas> deleteMangasFromUserList(String username, int manga_id) {
+        Mangas manga = mangasRepository.findById(manga_id).get();
+        User user = getUser(username);
+        user.deleteMangasFromList(manga);
+
+        userRepository.save(user);
+        return user.getMangas();
+    }
+
 
 }
