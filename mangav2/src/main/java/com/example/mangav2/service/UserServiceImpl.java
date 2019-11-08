@@ -1,6 +1,7 @@
 package com.example.mangav2.service;
 
 import com.example.mangav2.config.JwtUtil;
+import com.example.mangav2.controller.SecurityController;
 import com.example.mangav2.model.Mangas;
 import com.example.mangav2.model.User;
 import com.example.mangav2.repository.MangasRepository;
@@ -32,6 +33,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     JwtUtil jwtUtil;
+
+    @Autowired
+    SecurityController securityController;
 
     @Autowired
     @Qualifier("encoder")
@@ -101,5 +105,11 @@ public class UserServiceImpl implements UserService {
         return user.getMangas();
     }
 
+    @Override
+    public List<Mangas> listUserMangaList() {
+        String username = securityController.getCurrentUserName();
+        User user = userRepository.findByUsername(username);
+        return mangasRepository.findAllByUserId(user);
+    }
 
 }
