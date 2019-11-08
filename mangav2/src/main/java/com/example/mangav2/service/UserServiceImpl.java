@@ -38,4 +38,29 @@ public class UserServiceImpl implements UserService {
     @Qualifier("encoder")
     PasswordEncoder bCryptPasswordEncoder;
 
+    @Override
+    public User getUser(String username) {
+        return userRepository.findByUsername(username);
+    }
+
+    private List<GrantedAuthority> getGrantedAuthorities(User user){
+        List<GrantedAuthority> authorities = new ArrayList<>();
+
+        authorities.add(new SimpleGrantedAuthority(user.getUsername()));
+
+        return authorities;
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = getUser(username);
+
+        if(user==null)
+            throw new UsernameNotFoundException("User null");
+
+        return new org.springframework.security.core.userdetails.User (user.getUsername(), bCryptPasswordEncoder.encode(user.getPassword()),
+                true, true, true, true, getGrantedAuthorities(user));
+
+    }
+
 }

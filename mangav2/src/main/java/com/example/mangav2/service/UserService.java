@@ -11,6 +11,8 @@ public interface UserService extends UserDetailsService {
 
     public String login(User user);
 
+    public User getUser(String username);
+
     public Iterable<Mangas> addMangasToUserList(String username, int manga_id);
 
     public Iterable<Mangas> deleteMangasFromUserList(String username, int manga_id);
