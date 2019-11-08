@@ -16,4 +16,8 @@ public class MangaController {
         return mangasService.addMangaToDB(newManga);
     }
 
+    @GetMapping("/manga/list")
+    public Iterable<Mangas> listMangas() {
+        return mangasService.listMangas();
+    }
 }
