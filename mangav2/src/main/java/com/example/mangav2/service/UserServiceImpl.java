@@ -63,4 +63,14 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public String login(User user){
+        User returningUser = userRepository.findByUsername(user.getUsername());
+        if(returningUser != null && bCryptPasswordEncoder.matches(user.getPassword(), returningUser.getPassword())){
+            UserDetails userDetails = loadUserByUsername(returningUser.getUsername());
+            return jwtUtil.generateToken(userDetails);
+        }
+        return null;
+    }
+
 }
