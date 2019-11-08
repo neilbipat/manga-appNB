@@ -4,6 +4,8 @@ import com.example.mangav2.model.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
+import java.util.List;
+
 
 public interface UserService extends UserDetailsService {
 
@@ -17,4 +19,5 @@ public interface UserService extends UserDetailsService {
 
     public Iterable<Mangas> deleteMangasFromUserList(String username, int manga_id);
 
+    public List<Mangas> listUserMangas();
 }

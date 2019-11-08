@@ -7,5 +7,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SecurityController {
-    
+
+    @Autowired
+    private IAuthenticationFacade authenticationFacade;
+
+    public String getCurrentUserName() {
+        Authentication authentication = authenticationFacade.getAuthentication();
+        return authentication.getName();
+    }
 }
