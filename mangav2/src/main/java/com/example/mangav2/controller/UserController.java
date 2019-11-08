@@ -27,16 +27,16 @@ public class UserController {
     }
 
     @PutMapping("add/{username}/{manga_id}/")
-    public Iterable<Mangas> addManga(@PathVariable String username, @PathVariable int manga_id){
+    public Iterable<Mangas> addManga(@PathVariable String username, @PathVariable Long manga_id){
         return userService.addMangasToUserList(username, manga_id);
     }
 
     @DeleteMapping("/delete/{username}/{manga_id}/")
-    public Iterable<Mangas> deleteMangasFromUserList(@PathVariable String username, @PathVariable int manga_id) {
+    public Iterable<Mangas> deleteMangasFromUserList(@PathVariable String username, @PathVariable Long manga_id) {
         return userService.deleteMangasFromUserList(username, manga_id);
     }
 
-    @GetMapping("/listUserPosts")
+    @GetMapping("get/listUserMangas/")
     public List<Mangas> listUserMangaList() {return userService.listUserMangaList(); }
 
 }

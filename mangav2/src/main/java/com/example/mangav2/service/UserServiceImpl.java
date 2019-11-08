@@ -87,7 +87,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Iterable<Mangas> addMangasToUserList(String username, int manga_id) {
+    public Iterable<Mangas> addMangasToUserList(String username, Long manga_id) {
         Mangas manga = mangasRepository.findById(manga_id).get();
         User user = getUser(username);
         user.addMangaToList(manga);
@@ -96,7 +96,7 @@ public class UserServiceImpl implements UserService {
         return user.getMangas();
     }
 
-    public Iterable<Mangas> deleteMangasFromUserList(String username, int manga_id) {
+    public Iterable<Mangas> deleteMangasFromUserList(String username, Long manga_id) {
         Mangas manga = mangasRepository.findById(manga_id).get();
         User user = getUser(username);
         user.deleteMangasFromList(manga);
@@ -107,9 +107,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<Mangas> listUserMangaList() {
-        String username = securityController.getCurrentUserName();
-        User user = userRepository.findByUsername(username);
-        return mangasRepository.findAllByUserId(user);
+
+        User user = userRepository.findByUsername(securityController.getCurrentUserName());
+        return user.getMangas();
     }
 
 }

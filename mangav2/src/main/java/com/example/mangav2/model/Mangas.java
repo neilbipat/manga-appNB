@@ -17,9 +17,6 @@ public class Mangas {
     @Column
     private String title;
 
-    @Column
-    private String chapter;
-
     public Long getId() {
         return id;
     }
@@ -35,16 +32,6 @@ public class Mangas {
     public void setTitle(String title) {
         this.title = title;
     }
-
-    public String getChapter() {
-        return chapter;
-    }
-
-    public void setChapter(String chapter) {
-        this.chapter = chapter;
-    }
-
-
 
 
 }

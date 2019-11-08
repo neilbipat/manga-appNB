@@ -10,9 +10,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface MangasRepository extends CrudRepository<Mangas, Integer> {
-
-    @Query("SELECT m.id,m.title,m.chapter from User u inner join Mangas m where u.id = ?1")
-    public List<Mangas> findAllByUserId(User user);
+public interface MangasRepository extends CrudRepository<Mangas, Long> {
 
 }
