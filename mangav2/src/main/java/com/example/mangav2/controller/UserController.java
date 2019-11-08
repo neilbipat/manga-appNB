@@ -24,7 +24,7 @@ public class UserController {
         return ResponseEntity.ok(new JwtResponse(userService.login(user)));
     }
 
-    @PutMapping("/user/{username}/add{manga_id")
+    @PutMapping("add/{manga_id}/{username}")
     public Iterable<Mangas> addManga(@PathVariable String username, @PathVariable int manga_id){
         return userService.addMangasToUserList(username, manga_id);
     }
