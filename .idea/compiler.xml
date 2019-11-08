@@ -9,7 +9,13 @@
         <module name="api" />
         <module name="eureka-server" />
         <module name="zuul-gateway" />
-        <module name="login" />
+        <module name="mangav2" />
+      </profile>
+      <profile name="Annotation profile for Unknown" enabled="true">
+        <sourceOutputDir name="../generated-sources/annotations" />
+        <sourceTestOutputDir name="../generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="maven-archiver" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,7 +23,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
-      <module name="login" options="-parameters" />
+      <module name="mangav2" options="-parameters" />
       <module name="zuul-gateway" options="-parameters" />
     </option>
   </component>
