@@ -26,7 +26,7 @@ public class User {
     private String password;
 
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "userList",
+    @ManyToMany(fetch = FetchType.LAZY,
         cascade = {CascadeType.DETACH,
         CascadeType.MERGE, CascadeType.REFRESH})
     @JoinTable(name = "user_mangalist",
