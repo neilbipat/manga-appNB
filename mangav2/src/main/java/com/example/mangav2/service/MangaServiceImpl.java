@@ -7,4 +7,11 @@ import com.example.mangav2.repository.MangasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class MangaServiceImpl {
+
+    @Autowired
+    MangasRepository mangasRepository;
+
+    @Autowired
+    MangaService mangaService;
+
 }
