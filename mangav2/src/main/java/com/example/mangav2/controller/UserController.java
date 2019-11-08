@@ -21,6 +21,12 @@ public class UserController {
         return ResponseEntity.ok(new JwtResponse(userService.createUser(newUser)));
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody User user) {
+        return ResponseEntity.ok(new JwtResponse(userService.login(user)));
+    }
+
+    
 
 
 }
