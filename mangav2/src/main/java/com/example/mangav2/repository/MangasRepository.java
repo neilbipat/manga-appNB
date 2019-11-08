@@ -4,5 +4,5 @@ import com.example.mangav2.model.Mangas;
 import org.springframework.data.repository.CrudRepository;
 
 
-public interface MangasRepository {
+public interface MangasRepository extends CrudRepository<Mangas, Integer> {
 }
