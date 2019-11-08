@@ -14,4 +14,14 @@ public class MangaServiceImpl {
     @Autowired
     MangaService mangaService;
 
+    @Override
+    public Mangas addMangaToDB(Mangas newManga) {
+        return mangasRepository.save(newManga);
+    }
+
+    @Override
+    public Iterable<Mangas> listMangas() {
+        return mangasRepository.findAll();
+    }
+
 }
