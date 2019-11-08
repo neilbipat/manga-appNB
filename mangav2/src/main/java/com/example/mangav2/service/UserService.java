@@ -19,5 +19,4 @@ public interface UserService extends UserDetailsService {
 
     public Iterable<Mangas> deleteMangasFromUserList(String username, int manga_id);
 
-    public List<Mangas> listUserMangas();
 }
