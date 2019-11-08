@@ -73,4 +73,14 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    @Override
+    public String createUser(User newUser) {
+        newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
+        if(userRepository.save(newUser) != null){
+            UserDetails userDetails = loadUserByUsername(newUser.getUsername());
+            return jwtUtil.generateToken(userDetails);
+        }
+        return null;
+    }
+
 }
