@@ -1,14 +1,12 @@
 package com.example.mangav2.controller;
 
 import com.example.mangav2.model.JwtResponse;
+import com.example.mangav2.model.Mangas;
 import com.example.mangav2.model.User;
 import com.example.mangav2.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
@@ -26,7 +24,11 @@ public class UserController {
         return ResponseEntity.ok(new JwtResponse(userService.login(user)));
     }
 
-    
+    @PutMapping("/user/{username}/add{manga_id")
+    public Iterable<Mangas> addManga(@PathVariable String username, @PathVariable int manga_id){
+        return userService.addMangasToUserList(username, manga_id);
+    }
+
 
 
 }
