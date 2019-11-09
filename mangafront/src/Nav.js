@@ -16,7 +16,7 @@ function Nav(props){
                     <input type="text" className="password signUpPassword signUpTexts"
                         placeholder="password" />
                 </div>
-                <button type="submit" class="button signUpButton" >Sign In</button>
+                <button type="submit" className="button signUpButton" >Sign In</button>
             </form>
 
             <form className="logInForm Nav" method='post'>
@@ -28,7 +28,7 @@ function Nav(props){
                     <input type="text" className="password logInPassword logInTexts"
                         placeholder="password" />
                 </div>
-                <button type="submit" class="button signUpButton">Log In</button>
+                <button type="submit" className="button signUpButton">Log In</button>
             </form>
         </div>
     )
