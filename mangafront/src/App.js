@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 
+
+
 class App extends Component{
 
   constructor(){
@@ -10,14 +12,14 @@ class App extends Component{
     }
   }
   useInput = () => {
-    fetch(`https://www.mangaeden.com/api/list/0/`)
+    fetch(`https://www.mangaeden.com/api/chapter/5c56996c719a1689f3231217`)
       .then((res) => {
         return res.json();
       })
       .then((res) => {
-        // console.log(res);
+        console.log(res);
         this.setState({
-          manga: res.manga[0].a, 
+          images: res.images[0]["d7/d72b5fb2022bb68e37065f9d2c2f003ec455a918c3d4d1cc209e7701.png"], 
           apiLoaded: true
         })  
       })
@@ -27,7 +29,7 @@ class App extends Component{
   };
 
   renderManga = ()  => {
-    return <p>{this.state.manga}</p>
+    return <p>{this.state.images}</p>
   }
 
   render(){
