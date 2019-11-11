@@ -10,6 +10,16 @@ import {
 // custom components
 import Nav from './Nav';
 import Shounen from './Shounen';
+import styled from 'styled-components';
+
+const Links = styled(Link)`
+width: 100%;
+display: flex;
+justify-content: center;
+height: 100px;
+background: #104778;
+align-items: center;
+`;
 
 class App extends Component{
 
@@ -48,7 +58,7 @@ class App extends Component{
       <Router>
       <div className="App">
         <Nav>
-          <Link to="shounen">Shounen</Link>
+          <Links to="shounen">Shounen</Links>
         </Nav>
         <Switch>
           <Route
