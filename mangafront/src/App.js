@@ -8,9 +8,18 @@ import {
 } from "react-router-dom";
 
 // custom components
-import Nav from './Nav';
+import LogIn from './LogIn';
 import Shounen from './Shounen';
 import styled from 'styled-components';
+
+const Nav = styled.nav`
+width: 100%;
+display: flex;
+justify-content: center;
+height: 100px;
+background: #104778;
+align-items: center;
+`;
 
 const Links = styled(Link)`
 width: 100%;
@@ -59,11 +68,12 @@ class App extends Component{
       <div className="App">
         <Nav>
           <Links to="shounen">Shounen</Links>
+          <LogIn></LogIn>
         </Nav>
         <Switch>
           <Route
           path="/shounen" 
-          componenet = {Shounen}/>
+          component = {Shounen}/>
             
          
         </Switch>

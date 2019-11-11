@@ -3,7 +3,7 @@ import React from 'react';
 
 
 
-function Nav(props){
+function LogIn(props){
     return (
         <div>
             <form className="signupForm Nav" method="post">
@@ -37,4 +37,4 @@ function Nav(props){
     )
 }
 
-export default Nav;
+export default LogIn;
