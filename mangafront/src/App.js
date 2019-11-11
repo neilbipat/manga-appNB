@@ -17,7 +17,6 @@ width: 100%;
 display: flex;
 justify-content: center;
 height: 100px;
-background: #104778;
 align-items: center;
 `;
 
@@ -26,7 +25,6 @@ width: 100%;
 display: flex;
 justify-content: center;
 height: 100px;
-background: #104778;
 align-items: center;
 `;
 
@@ -66,9 +64,10 @@ class App extends Component{
     return (
       <Router>
       <div className="App">
+          <LogIn></LogIn>
         <Nav>
           <Links to="shounen">Shounen</Links>
-          <LogIn></LogIn>
+         
         </Nav>
         <Switch>
           <Route
@@ -78,7 +77,7 @@ class App extends Component{
          
         </Switch>
         <div className = "JumpMangas">
-          <button onClick ={this.useInput}>Manga</button>
+          <button onClick = {this.useInput}>Manga</button>
           <div>
           {this.state.apiLoaded ? this.renderManga(): "Your manga is loading"}
           </div>

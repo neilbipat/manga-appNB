@@ -6,15 +6,13 @@ class Shounen extends Component {
 
         this.state = {
             apiDataLoaded: false,
-            apiDataError: false
+            apiDataError: false,
+            shounenArr: []
         }
     }
 
-    
-
-
     componentDidMount() {
-        let shounenArr = [];
+        let shounenArr = this.state.shounenArr;
         fetch('https://www.mangaeden.com/api/list/0/')
             .then((res) => {
                 return res.json();
@@ -28,7 +26,11 @@ class Shounen extends Component {
                             shounenArr.push(element);
                         }
                     }
-                    return shounenArr;
+
+                    // this is the way we return in jsx setting the array to the state
+                   this.setState({
+                       shounenArr
+                   })
                 })
             })
             .then(res => {
@@ -44,9 +46,22 @@ class Shounen extends Component {
     }
 
     renderShounen() {
-        return <div>
-            {this.state.manga.a}
+        return this.state.shounenArr.map((manga, key) => {
+            return <div key = {key}>
+                <p>{manga.t}</p>
+                <img src={manga.im}></img>
+            </div>
+        })
+    }
+    render() {
+        return (
+        <div>
+            <h1>Shounen</h1>
+            {this.state.apiDataError ? "Sorry, mangas not ready" : ""}
+            {this.state.apiDataLoaded ? this.renderShounen():"Your shounen mangas are ready"}
+
         </div>
+        )
     }
 }
 
