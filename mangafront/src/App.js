@@ -9,6 +9,7 @@ import {
 
 // custom components
 import Nav from './Nav';
+import Shounen from './Shounen';
 
 class App extends Component{
 
@@ -47,9 +48,15 @@ class App extends Component{
       <Router>
       <div className="App">
         <Nav>
-          <Links to "shounen">Shounen</Links>
-          
+          <Link to="shounen">Shounen</Link>
         </Nav>
+        <Switch>
+          <Route
+          path="/shounen" 
+          componenet = {Shounen}/>
+            
+         
+        </Switch>
         <div className = "JumpMangas">
           <button onClick ={this.useInput}>Manga</button>
           <div>
