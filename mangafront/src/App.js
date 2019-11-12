@@ -32,31 +32,19 @@ class App extends Component{
 
   constructor(props) {
     super(props);
+
     this.state = {
-      signup: "",
-      apiLoaded: false
+      apiLoaded: false,
+      username: "",
+      email: "",
+      password: "",
+      token: ""
     }
   }
 
-  componentDidMount() {
-    fetch("http://http://localhost:8081/signup")
-      .then(res => {
-        return res.json();
-      })
-      .then(res => {
-
-        this.setState({
-          signup: res,
-          apiLoaded: true,
-          username: "",
-          email: "",
-          password: ""
-        })
-      })
-  }
-
-  submitForm = (e) => {
-    e.preventDefault("http://http://localhost:8081/signup", {
+  submitSignupForm = (e) => {
+    e.preventDefault();
+    fetch("http://localhost:8081/signup", {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain , */*',
@@ -68,12 +56,24 @@ class App extends Component{
         password: this.state.password
       })
     })
-    
-
+      .then(res => res.json())
+      .then(res => {
+        console.log(res, "I got a response!")
+        this.setState({
+          username: "",
+          email: "",
+          password: "",
+          token: res.token,
+          apiLoaded: true
+        })
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }
 
   handleNameChange = (e) => {
-    this.setState({ title: e.target.value})
+    this.setState({ username: e.target.value})
   }
 
   handleEmailChange = (e) => {
@@ -98,7 +98,10 @@ class App extends Component{
         username ={this.state.username}
         email ={this.state.email}
         password={this.state.password}
-        submitForm={this.submitForm}/>
+        handleNameChange={this.handleNameChange}
+        handleEmailChange={this.handleEmailChange}
+        handlePasswordChange={this.handlePasswordChange}
+        submitForm={this.submitSignupForm}/>
           
         <Nav>
           <Links to="shounen">Shounen</Links>
