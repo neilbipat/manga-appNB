@@ -49,7 +49,7 @@ class Shounen extends Component {
         return this.state.shounenArr.map((manga, key) => {
             return <div key = {key}>
                 <p>{manga.t}</p>
-                <img src={manga.im}></img>
+                <a href={`https://www.mangaeden.com/en/en-manga/${manga.a}/`}>View manga here</a>
             </div>
         })
     }
