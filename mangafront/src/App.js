@@ -8,9 +8,9 @@ import {
 } from "react-router-dom";
 
 // custom components
-import LogIn from './LogIn';
 import Shounen from './Shounen';
 import styled from 'styled-components';
+import CreateForm from './CreateForm';
 
 const Nav = styled.nav`
 width: 100%;
@@ -30,41 +30,76 @@ align-items: center;
 
 class App extends Component{
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      signup: "",
       apiLoaded: false
     }
   }
 
-  useInput = () => {
-    fetch(`https://www.mangaeden.com/api/manga/4e70ea03c092255ef7004712/`)
-      .then((res) => {
+  componentDidMount() {
+    fetch("http://http://localhost:8081/signup")
+      .then(res => {
         return res.json();
       })
-      .then((res) => {
-        console.log(res);
+      .then(res => {
+
         this.setState({
-          alias: res.alias,
-          description: res.description,
-          apiLoaded: true
+          signup: res,
+          apiLoaded: true,
+          username: "",
+          email: "",
+          password: ""
         })
       })
-      .catch((error) => {
-        console.log(error);
-      })
-  };
-
-  renderManga = () => {
-    return <div><p>{this.state.alias}</p>
-    <p>{this.state.description}</p></div>
   }
+
+  submitForm = (e) => {
+    e.preventDefault("http://http://localhost:8081/signup", {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain , */*',
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify({
+        username: this.state.username,
+        email: this.state.email,
+        password: this.state.password
+      })
+    })
+    
+
+  }
+
+  handleNameChange = (e) => {
+    this.setState({ title: e.target.value})
+  }
+
+  handleEmailChange = (e) => {
+    this.setState({email: e.target.value})
+  }
+
+  handlePasswordChange = (e) => {
+    this.setState({password: e.target.value})
+  }
+
+  
+
 
   render(){
     return (
       <Router>
       <div className="App">
-          <LogIn></LogIn>
+        {this.state.apiLoaded}
+        )
+      }
+        <CreateForm
+        username ={this.state.username}
+        email ={this.state.email}
+        password={this.state.password}
+        submitForm={this.submitForm}/>
+          
         <Nav>
           <Links to="shounen">Shounen</Links>
          
@@ -76,12 +111,7 @@ class App extends Component{
             
          
         </Switch>
-        <div className = "JumpMangas">
-          <button onClick = {this.useInput}>Manga</button>
-          <div>
-          {this.state.apiLoaded ? this.renderManga(): "Your manga is loading"}
-          </div>
-        </div>
+          
       </div>
         </Router>
     );
