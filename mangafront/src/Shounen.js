@@ -45,10 +45,29 @@ class Shounen extends Component {
             })
     }
 
+    addToList =(id) => {
+        console.log(id)
+        //console.log(parseInt(id))
+        // const idNumber = Number(id);
+        // console.log(idNumber)
+        // fetch(`http://localhost:8081/add/${idNumber}/`, {
+        //     method: 'PUT',
+        //     headers: {
+        //         'Accept': 'application/json, text/plain, */*',
+        //         'Content-Type' : 'application/json'
+        //     }
+        // })
+        //     .then(res => res.json())
+        //     .then(res => {
+        //         console.log(res, "I got a response!")
+        //     })
+    }
+
     renderShounen() {
         return this.state.shounenArr.map((manga, key) => {
             return <div key = {key}>
                 <p>{manga.t}</p>
+                <button onClick={() => this.addToList(`${manga.i}`)} className="item">Add to list?</button>
                 <a href={`https://www.mangaeden.com/en/en-manga/${manga.a}/`}>View manga here</a>
             </div>
         })

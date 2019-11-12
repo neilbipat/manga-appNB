@@ -83,7 +83,6 @@ class App extends Component{
   
   submitLoginForm = (e) => {
     e.preventDefault();
-    console.log(this.state.usernameLog, this.state.passwordLog)
     fetch("http://localhost:8081/login", {
       method: 'POST',
       headers: {
@@ -151,16 +150,19 @@ class App extends Component{
         passwordLog={this.state.passwordLog}
         handleNameLogChange={this.handleNameLogChange}
         handlePasswordLogChange={this.handlePasswordLogChange}
-        loginForm={(e) => this.submitLoginForm(e)}/>
+        loginForm={(e) => this.submitLoginForm(e)} />
         
         <Nav>
-          <Links to="shounen">Shounen</Links>
+          <Links to="/shounen">Shounen</Links>
          
         </Nav>
         <Switch>
+          <Route exact path="/" render={() => <div />} />
           <Route
-          path="/shounen" 
+          exact path="/shounen" 
           component = {Shounen}/>
+
+          {/* <Route path="/shounen" render={() => <Shounen /> } */}
             
          
         </Switch>
