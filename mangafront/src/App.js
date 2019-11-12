@@ -10,7 +10,8 @@ import {
 // custom components
 import Shounen from './Shounen';
 import styled from 'styled-components';
-import CreateForm from './CreateForm';
+import SignupForm from './SignupForm';
+import LoginForm from './LoginForm';
 
 const Nav = styled.nav`
 width: 100%;
@@ -38,9 +39,15 @@ class App extends Component{
       username: "",
       email: "",
       password: "",
-      token: ""
+      token: "",
+      usernameLog: "",
+      passwordLog: "",
+
     }
   }
+
+  //==== Signup Form ===//
+
 
   submitSignupForm = (e) => {
     e.preventDefault();
@@ -72,6 +79,34 @@ class App extends Component{
       })
   }
 
+  //===Login Form===//
+  
+  submitLoginForm = (e) => {
+    e.preventDefault();
+    console.log(this.state.usernameLog, this.state.passwordLog)
+    fetch("http://localhost:8081/login", {
+      method: 'POST',
+      headers: {
+        'Accept' : 'application/json, text/plain, */*',
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify({
+        username: this.state.usernameLog,
+        password: this.state.passwordLog
+      })
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res, "I got a response")
+        this.setState({
+          usernameLog: "",
+          passwordLog: "",
+          token: res.token,
+          apiLoaded: true
+        })
+      })
+  }
+
   handleNameChange = (e) => {
     this.setState({ username: e.target.value})
   }
@@ -84,6 +119,14 @@ class App extends Component{
     this.setState({password: e.target.value})
   }
 
+  handleNameLogChange = (e) => {
+    this.setState({usernameLog: e.target.value})
+  }
+
+  handlePasswordLogChange = (e) => {
+    this.setState({passwordLog: e.target.value})
+  }
+
   
 
 
@@ -94,7 +137,7 @@ class App extends Component{
         {this.state.apiLoaded}
         )
       }
-        <CreateForm
+        <SignupForm
         username ={this.state.username}
         email ={this.state.email}
         password={this.state.password}
@@ -102,7 +145,14 @@ class App extends Component{
         handleEmailChange={this.handleEmailChange}
         handlePasswordChange={this.handlePasswordChange}
         submitForm={this.submitSignupForm}/>
-          
+
+        <LoginForm
+        usernameLog={this.state.usernameLog}
+        passwordLog={this.state.passwordLog}
+        handleNameLogChange={this.handleNameLogChange}
+        handlePasswordLogChange={this.handlePasswordLogChange}
+        loginForm={(e) => this.submitLoginForm(e)}/>
+        
         <Nav>
           <Links to="shounen">Shounen</Links>
          
@@ -123,6 +173,3 @@ class App extends Component{
 
 export default App;
 
-//  <Navbar></Navbar>
-// <Manga></Manga>
-// <Footer></Footer>

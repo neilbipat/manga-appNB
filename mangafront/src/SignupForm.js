@@ -1,10 +1,9 @@
 import React from 'react';
 
-const CreateForm = props => {
+const SignupForm = props => {
     return(
-        
-        <div>
 
+        <div className="Signup Form">
            <form onSubmit={props.submitForm}>
 
             <label htmlFor="username">Username:
@@ -42,4 +41,4 @@ const CreateForm = props => {
     )
 }
 
-export default CreateForm;
+export default SignupForm;
