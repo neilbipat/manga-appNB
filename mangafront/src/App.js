@@ -12,6 +12,7 @@ import Shounen from './Shounen';
 import styled from 'styled-components';
 import SignupForm from './SignupForm';
 import LoginForm from './LoginForm';
+import UserList from './UserList';
 
 const Nav = styled.nav`
 width: 100%;
@@ -152,6 +153,9 @@ class App extends Component{
         loginForm={(e) => this.submitLoginForm(e)} />
 
         <Shounen
+          token = {this.state.token}
+        />
+        <UserList
           token = {this.state.token}
         />
         

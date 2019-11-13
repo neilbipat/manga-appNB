@@ -49,18 +49,18 @@ class Shounen extends Component {
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify({
-                            title: shounenManga.t
+                            title: shounenManga.a
                         })
                     })
-                    .then(res => {
-                        return res.json()
-                    })
-                    .then(res => {
-                        console.log(res)
-                    })
-                    .catch(error => {
-                        console.log(error);
-                    })
+                        .then(res => {
+                            return res.json()
+                        })
+                        .then(res => {
+                            console.log(res)
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        })
                 })
             })
             .catch(err => {
@@ -68,71 +68,8 @@ class Shounen extends Component {
                 this.setState({ apiDataError: true })
             })
 
-           
+
     }
-
-
-    // componentDidMount() {
-    //     let shounenArr = this.state.shounenArr;
-    //     fetch('https://www.mangaeden.com/api/list/0/')
-    //         .then((res) => {
-    //             return res.json();
-    //         })
-    //         .then((res) => {
-    //             res.manga.slice(0, 300).map(element => {
-    //                 let query = 'Shounen'
-    //                 // let genreCheck =  element.c.filter(genre => genre.indexOf(query.toLowerCase()) !== -1)
-    //                 for (let i = 0; i < element.c.length; i++) {
-    //                     if (element.c[i] === query) {
-    //                         shounenArr.push(element);
-    //                     }
-    //                 }
-    //                 // this is the way we return in jsx setting the array to the state
-    //                this.setState({
-    //                    shounenArr
-    //                })
-    //             })
-    //         })
-    //         .then(res => {
-    //             this.setState({
-    //                 apiDataLoaded: true,
-    //                 data: res
-    //             })
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //              this.setState({apiDataError: true})
-    //         })
-    //     console.log(shounenArr);
-
-    //     this.addToMangaList();
-         
-       
-    // }
-
-    // // ADD MANGA TO GENERAL LIST
-    // addToMangaList =() => {
-    //     this.state.shounenArr.map(shounenManga => {
-    //         fetch(`http://localhost:8081/add/manga/add`, {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Accept': 'application/json, text/plain, */*',
-    //                 'Content-Type': 'application/json'
-    //             },
-    //             body: JSON.stringify({
-    //                 title: shounenManga.t
-    //             })
-    //         })
-    //             .then(res => {
-    //                 console.log(res, "Manga has been added to backend")
-    //             })
-    //             .catch(error => {
-    //                 console.log(error);
-    //             })
-    //     })       
-    // }
-
-
 
     addToUserList =(mangaTitle) => {
         console.log(this.props.token, "using token in shounen");
@@ -150,11 +87,12 @@ class Shounen extends Component {
             })
     }
 
+    
     renderShounen() {
         return this.state.shounenArr.map((manga, key) => {
             return <div key = {key}>
-                <p>{manga.t}</p>
-                <button onClick={() => this.addToUserList(manga.t)} className="item">Add to list?</button>
+                <p>{manga.a}</p>
+                <button onClick={() => this.addToUserList(manga.a)} className="item">Add to list?</button>
                 <a target="_blank" href={`https://www.mangaeden.com/en/en-manga/${manga.a}/`}>View manga here</a>
             </div>
         })
@@ -165,7 +103,6 @@ class Shounen extends Component {
             <h1>Shounen</h1>
             {this.state.apiDataError ? "Sorry, mangas not ready" : ""}
             {this.state.apiDataLoaded ? this.renderShounen():"Shounen mangas are loading"}
-
         </div>
         )
     }
