@@ -7,7 +7,8 @@ class Shounen extends Component {
         this.state = {
             apiDataLoaded: false,
             apiDataError: false,
-            shounenArr: []
+            shounenArr: [],
+            title: ""
         }
     }
 
@@ -33,6 +34,25 @@ class Shounen extends Component {
                        shounenArr
                    })
                 })
+                console.log(console.log(shounenArr))
+                shounenArr.map(shounenManga => {
+                    fetch(`http://localhost:8081/add/manga/add`, {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json, text/plain, */*',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            title: shounenManga.t
+                        })
+                    })
+                })
+                        .then(res => {
+                            console.log(res, "Manga has been added to backend")
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        })
             })
             .then(res => {
                 this.setState({
@@ -44,11 +64,16 @@ class Shounen extends Component {
                 console.log(err);
                  this.setState({apiDataError: true})
             })
-
-        
     }
 
-    addToList =(mangaTitle) => {
+    // ADD MANGA TO GENERAL LIST
+    addToMangaList =() => {
+
+    }
+
+   
+
+    addToUserList =(mangaTitle) => {
         console.log(this.props.token, "using token in shounen");
         fetch(`http://localhost:8081/add/${mangaTitle}/`, {
             method: 'POST',
@@ -68,7 +93,7 @@ class Shounen extends Component {
         return this.state.shounenArr.map((manga, key) => {
             return <div key = {key}>
                 <p>{manga.t}</p>
-                <button onClick={() => this.addToList(manga.t)} className="item">Add to list?</button>
+                <button onClick={() => this.addToUserList(manga.t)} className="item">Add to list?</button>
                 <a href={`https://www.mangaeden.com/en/en-manga/${manga.a}/`}>View manga here</a>
             </div>
         })
