@@ -14,9 +14,9 @@ public interface UserService extends UserDetailsService {
 
     public User getUser(String username);
 
-    public Iterable<Mangas> addMangasToUserList(String username, Long manga_id);
+    public Iterable<Mangas> addMangasToUserList(String username, String title);
 
-    public Iterable<Mangas> deleteMangasFromUserList(String username, Long manga_id);
+    public Iterable<Mangas> deleteMangasFromUserList(String username, String title);
 
     public List<Mangas> listUserMangaList();
 }

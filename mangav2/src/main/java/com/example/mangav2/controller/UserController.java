@@ -31,16 +31,16 @@ public class UserController {
         return ResponseEntity.ok(new JwtResponse(userService.login(user)));
     }
 
-    @PutMapping("add/{manga_id}/")
-    public Iterable<Mangas> addManga(@PathVariable Long manga_id){
+    @PostMapping("add/{title}/")
+    public Iterable<Mangas> addManga(@PathVariable String title){
         String username = securityController.getCurrentUserName();
-        return userService.addMangasToUserList(username, manga_id);
+        return userService.addMangasToUserList(username, title);
     }
 
-    @DeleteMapping("/delete/{manga_id}/")
-    public Iterable<Mangas> deleteMangasFromUserList(@PathVariable Long manga_id) {
+    @DeleteMapping("/delete/{title}/")
+    public Iterable<Mangas> deleteMangasFromUserList(@PathVariable String title) {
         String username = securityController.getCurrentUserName();
-        return userService.deleteMangasFromUserList(username, manga_id);
+        return userService.deleteMangasFromUserList(username, title);
     }
 
     @GetMapping("get/listUserMangas/")

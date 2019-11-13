@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Link,
-  Switch,
-  Route
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Link,
+//   Switch,
+//   Route
+// } from "react-router-dom";
 
 // custom components
 import Shounen from './Shounen';
@@ -21,13 +21,13 @@ height: 100px;
 align-items: center;
 `;
 
-const Links = styled(Link)`
-width: 100%;
-display: flex;
-justify-content: center;
-height: 100px;
-align-items: center;
-`;
+// const Links = styled(Link)`
+// width: 100%;
+// display: flex;
+// justify-content: center;
+// height: 100px;
+// align-items: center;
+// `;
 
 class App extends Component{
 
@@ -131,7 +131,6 @@ class App extends Component{
 
   render(){
     return (
-      <Router>
       <div className="App">
         {this.state.apiLoaded}
         )
@@ -151,9 +150,13 @@ class App extends Component{
         handleNameLogChange={this.handleNameLogChange}
         handlePasswordLogChange={this.handlePasswordLogChange}
         loginForm={(e) => this.submitLoginForm(e)} />
+
+        <Shounen
+          token = {this.state.token}
+        />
         
-        <Nav>
-          <Links to="/shounen">Shounen</Links>
+        {/* <Nav>
+          <Links to="/shounen" token={this.state.token}>Shounen</Links>
          
         </Nav>
         <Switch>
@@ -161,14 +164,10 @@ class App extends Component{
           <Route
           exact path="/shounen" 
           component = {Shounen}/>
-
-          {/* <Route path="/shounen" render={() => <Shounen /> } */}
-            
-         
-        </Switch>
+        </Switch> */}
           
       </div>
-        </Router>
+       
     );
   }
 }

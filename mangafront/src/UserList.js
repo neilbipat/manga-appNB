@@ -7,13 +7,15 @@ class Profile extends Component {
         this.state = {
             apiDataLoaded: false,
             apiDataError: false,
-            userList: []
+            userManga: []
         }
     }
 
-
+    componentDidMount() {
+        let userManga = this.state.userManga;
+        fetch('')
     }
- 
 
-    compone
 }
+
+export default UserList;

@@ -11,5 +11,7 @@ import java.util.List;
 
 @Repository
 public interface MangasRepository extends CrudRepository<Mangas, Long> {
+    @Query("From Mangas m WHERE m.title = ?1")
+    public Mangas findMangasByTitle(String title);
 
 }

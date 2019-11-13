@@ -31,7 +31,7 @@ public class User {
         CascadeType.MERGE, CascadeType.REFRESH})
     @JoinTable(name = "user_mangalist",
                 joinColumns = {@JoinColumn(name = "user_id")},
-                inverseJoinColumns = @JoinColumn(name = "manga_id"))
+                inverseJoinColumns = @JoinColumn(name = "manga_title"))
     private List<Mangas> mangas;
 
 
