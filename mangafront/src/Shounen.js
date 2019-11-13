@@ -13,6 +13,7 @@ class Shounen extends Component {
 
     componentDidMount() {
         let shounenArr = this.state.shounenArr;
+        console.log(shounenArr);
         fetch('https://www.mangaeden.com/api/list/0/')
             .then((res) => {
                 return res.json();
@@ -43,6 +44,8 @@ class Shounen extends Component {
                 console.log(err);
                  this.setState({apiDataError: true})
             })
+
+        
     }
 
     addToList =(mangaTitle) => {
