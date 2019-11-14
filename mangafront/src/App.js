@@ -107,6 +107,8 @@ class App extends Component{
       })
   }
 
+  //===The 3 are for signup===//
+
   handleNameChange = (e) => {
     this.setState({ username: e.target.value})
   }
@@ -118,6 +120,8 @@ class App extends Component{
   handlePasswordChange = (e) => {
     this.setState({password: e.target.value})
   }
+
+  //===The two are for login===//
 
   handleNameLogChange = (e) => {
     this.setState({usernameLog: e.target.value})
@@ -158,18 +162,7 @@ class App extends Component{
         <UserList
           token = {this.state.token}
         />
-        
-        {/* <Nav>
-          <Links to="/shounen" token={this.state.token}>Shounen</Links>
-         
-        </Nav>
-        <Switch>
-          <Route exact path="/" render={() => <div />} />
-          <Route
-          exact path="/shounen" 
-          component = {Shounen}/>
-        </Switch> */}
-          
+             
       </div>
        
     );

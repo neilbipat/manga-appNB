@@ -11,6 +11,8 @@ class UserList extends Component {
         }
     }
 
+    //========Shows the user list ========//
+
    showUserList =(e) => {
        e.preventDefault();
             console.log(this.props.token, "using token in shounen");
@@ -30,8 +32,6 @@ class UserList extends Component {
                     title: res
                 })
 
-                
-
                     console.log(this.state.title, "User's mangas is shown!")
                 })
        
@@ -40,6 +40,8 @@ class UserList extends Component {
                 this.setState({apiDataError: true})
             })   
     }
+
+    //==========deleteFromUserList===========//
 
         deleteFromUserList =(mangaTitle) => {
            
@@ -64,6 +66,8 @@ class UserList extends Component {
                     console.log(res, "I got a response")
                 })
         }
+
+        //===========render==========// 
 
     
     render() {

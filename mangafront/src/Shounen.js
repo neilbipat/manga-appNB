@@ -12,6 +12,12 @@ class Shounen extends Component {
         }
     }
 
+    /**
+     * componentDidMount is doing 2 things
+     * 1. getting the manga from the mangaList
+     * 2. taking this manga and posting to the backend 
+     */
+
     componentDidMount() {
         let shounenArr = this.state.shounenArr;
         console.log(shounenArr);
@@ -71,6 +77,8 @@ class Shounen extends Component {
 
     }
 
+    //==========add to users ==========//
+
     addToUserList =(mangaTitle) => {
         console.log(this.props.token, "using token in shounen");
         fetch(`http://localhost:8081/add/${mangaTitle}/`, {
@@ -86,7 +94,8 @@ class Shounen extends Component {
                 console.log(res, "I got a response!")
             })
     }
-
+    
+    //=======renderShounen=========//
     
     renderShounen() {
         return this.state.shounenArr.map((manga, key) => {
@@ -97,6 +106,9 @@ class Shounen extends Component {
             </div>
         })
     }
+
+    //===========regular render==========//
+
     render() {
         return (
         <div>
