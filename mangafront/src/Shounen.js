@@ -1,5 +1,63 @@
 import React, {Component}from 'react';
 
+// custom componenets
+import styled from 'styled-components';
+
+// ApiList
+const ApiList = styled.div`
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 3%;
+    width: 50%;
+    height: 2%;
+`;
+
+// MangaTitle
+const MangaTitle =styled.p`
+    text-align: center;
+    margin-top: 22%;
+`;
+
+// Hyperlink
+const Hyperlink = styled.a`
+    text-align: center;
+    text-decoration: none;
+
+    color: black;
+
+    /* Hover */
+    &: hover {
+        color: blue;
+        cursor: pointer;
+    }
+
+`;
+
+// Button
+const Button =styled.button`
+    width: 40%;
+    margin-top: 5%;
+    margin-left: 28%;
+   
+
+    /* Hover */
+    &: hover {
+        color: white;
+    background-color: grey;
+    }
+
+`;
+
+// BigShounen
+const BigShounen = styled.h1`
+    margin-left: 12%;
+`;
+
+
+
+
 class Shounen extends Component {
     constructor(props) {
         super(props);
@@ -11,6 +69,7 @@ class Shounen extends Component {
             title: ""
         }
     }
+
 
     /**
      * componentDidMount is doing 2 things
@@ -111,11 +170,11 @@ class Shounen extends Component {
     
     renderShounen() {
         return this.state.shounenArr.map((manga, key) => {
-            return <div key = {key}>
-                <p>{manga.a}</p>
-                <button onClick={() => this.addToUserList(manga.a)} className="item">Add to list?</button>
-                <a target="_blank" href={`https://www.mangaeden.com/en/en-manga/${manga.a}`}>View manga here</a>
-                </div>
+            return <ApiList key = {key}>
+                <MangaTitle>{manga.a}</MangaTitle>
+                <Hyperlink target="_blank" href={`https://www.mangaeden.com/en/en-manga/${manga.a}`}>View manga here</Hyperlink>
+                <Button onClick={() => this.addToUserList(manga.a)} className="item">Add to list?</Button>
+                </ApiList>
         })
     }
 
@@ -124,7 +183,7 @@ class Shounen extends Component {
     render() {
         return (
         <div>
-            <h1>Shounen</h1>
+            <BigShounen>Shounen</BigShounen>
             {this.state.apiDataError ? "Sorry, mangas not ready" : ""}
             {this.state.apiDataLoaded ? this.renderShounen():"Shounen mangas are loading"}
         </div>

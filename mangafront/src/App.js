@@ -24,6 +24,7 @@ const LogOutButton = styled.button`
   height: 5%;
   border-radius: 5px;
 
+  /* Hover */
   &: hover {
     color: white;
     background-color: grey;
@@ -31,11 +32,15 @@ const LogOutButton = styled.button`
   
 `;
 
+// BodyDiv
+
 const BodyDiv = styled.div`
   display: flex;
   justify-content: center;
   justify-content: space-around;
 `;
+
+
 
 
 
