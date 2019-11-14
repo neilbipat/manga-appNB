@@ -1,9 +1,18 @@
 import React from 'react';
 
+// custom components
+import styled from 'styled-components';
+
+const Signup = styled.div`
+    text-align: center;
+`;
+
+
+
 const SignupForm = props => {
     return(
 
-        <div className="Signup Form">
+        <Signup>
            <form onSubmit={props.submitForm}>
 
             <label htmlFor="username">Username:
@@ -37,7 +46,7 @@ const SignupForm = props => {
             </label>
             <input type="submit" value="create"/>
         </form> 
-        </div>
+        </Signup>
     )
 }
 
