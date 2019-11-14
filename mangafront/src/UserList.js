@@ -15,6 +15,11 @@ class UserList extends Component {
 
    showUserList =(e) => {
        e.preventDefault();
+       if (this.props.token === ""){
+           alert(`Please Sign in`)
+       } else{
+
+       
             console.log(this.props.token, "using token in shounen");
             fetch(`http://localhost:8081/get/listUserMangas/`, {
                 method: 'GET',
@@ -38,7 +43,8 @@ class UserList extends Component {
             .catch(err => {
                 console.log(err);
                 this.setState({apiDataError: true})
-            })   
+            })
+        }   
     }
 
     //==========deleteFromUserList===========//
