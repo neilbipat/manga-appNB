@@ -12,6 +12,7 @@ const ApiList = styled.div`
     margin-bottom: 3%;
     width: 50%;
     height: 2%;
+    background-color: lightblue;
 `;
 
 // MangaTitle

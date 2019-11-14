@@ -72,6 +72,7 @@ import styled from 'styled-components';
         width: 30vw;
         max-width: 70%;
         height: 1%;
+        background-color: pink;
     `;
 
 class UserList extends Component {

@@ -15,6 +15,7 @@ const SignAndLogInDiv =styled.div`
   display:flex;
   justify-content: space-around;
   margin-top: 1%;
+  background-color: orange;
 `;
 
 
@@ -40,6 +41,10 @@ const BodyDiv = styled.div`
   justify-content: space-around;
 `;
 
+// BigDiv
+const BigDiv = styled.div `
+  background-color: lightgoldenrodyellow;
+`;
 
 
 
@@ -163,7 +168,7 @@ class App extends Component{
 
   render(){
     return (
-      <div className="App">
+      <BigDiv className="App">
         <SignAndLogInDiv>
         {this.state.apiLoaded}
         <SignupForm
@@ -194,7 +199,7 @@ class App extends Component{
           token = {this.state.token}
         />
         </BodyDiv>      
-      </div>
+      </BigDiv>
        
     );
   }
