@@ -33,6 +33,8 @@ const LogOutButton = styled.button`
 
 const BodyDiv = styled.div`
   display: flex;
+  justify-content: center;
+  justify-content: space-around;
 `;
 
 
