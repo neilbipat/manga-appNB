@@ -49,9 +49,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //authentication states that anything inside of it such as user or profile if you put / then anything afterwards needs authentication
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/signup/**", "/login/**")
+                .antMatchers("/signup/**", "/login/**", "/mangas/add")
                 .permitAll()
-                .antMatchers("/user/**", "/mangas/**")
+                .antMatchers("/user/**", "/manga/list")
                 .authenticated()
                 .and()
                 .httpBasic();

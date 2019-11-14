@@ -16,6 +16,7 @@ public class MangasServiceImpl implements MangasService {
 
     @Override
     public Mangas addMangaToDB(Mangas newManga) {
+        System.out.println(newManga);
         return mangasRepository.save(newManga);
     }
 
