@@ -60,6 +60,9 @@ class App extends Component{
           token: res.token,
           apiLoaded: true
         })
+        if(this.state.token == null){
+          alert(`Please Sign in`);
+        }
       })
       .catch(error => {
         console.log(error);
@@ -90,6 +93,9 @@ class App extends Component{
           token: res.token,
           apiLoaded: true
         })
+        if (this.state.token == null) {
+          alert(`Please Sign in`);
+        }
       })
   }
 
