@@ -74,6 +74,7 @@ class UserList extends Component {
                 {this.state.title.map((manga, key) => {
                     return <div key={key}>
                     <p>{manga.title}</p>
+                        <a target="_blank" href={`https://www.mangaeden.com/en/en-manga/${manga.title}/`}>View manga here</a>
                     <button onClick={() => this.deleteFromUserList(manga.title)}></button>
                     </div>
                     
