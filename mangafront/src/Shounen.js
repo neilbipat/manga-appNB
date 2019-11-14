@@ -47,27 +47,27 @@ class Shounen extends Component {
                     apiDataLoaded: true,
                     data: res
                 })
-                shounenArr.map(shounenManga => {
-                    fetch(`http://localhost:8081/manga/add`, {
-                        method: 'POST',
-                        headers: {
-                            'Accept': 'application/json, text/plain, */*',
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            title: shounenManga.a
-                        })
-                    })
-                        .then(res => {
-                            return res.json()
-                        })
-                        .then(res => {
-                            console.log(res)
-                        })
-                        .catch(error => {
-                            console.log(error);
-                        })
-                })
+                // shounenArr.map(shounenManga => {
+                //     fetch(`http://localhost:8081/manga/add`, {
+                //         method: 'POST',
+                //         headers: {
+                //             'Accept': 'application/json, text/plain, */*',
+                //             'Content-Type': 'application/json'
+                //         },
+                //         body: JSON.stringify({
+                //             title: shounenManga.a
+                //         })
+                //     })
+                //         .then(res => {
+                //             return res.json()
+                //         })
+                //         .then(res => {
+                //             console.log(res)
+                //         })
+                //         .catch(error => {
+                //             console.log(error);
+                //         })
+                // })
             })
             .catch(err => {
                 console.log(err);
@@ -80,6 +80,12 @@ class Shounen extends Component {
     //==========add to users ==========//
 
     addToUserList =(mangaTitle) => {
+        console.log("TOKEN", this.props.token)
+        if (this.props.token === "") {
+
+            alert(`Please Sign in`)
+        } else {
+
         console.log(this.props.token, "using token in shounen");
         fetch(`http://localhost:8081/add/${mangaTitle}/`, {
             method: 'POST',
@@ -89,10 +95,20 @@ class Shounen extends Component {
                 "Authorization": "Bearer " + this.props.token  
             }
         })
+
+        
+            
+    
+
             .then(res => res.json())
             .then(res => {
-                console.log(res, "I got a response!")
+                console.log(res, "I got a response!");
+                
             })
+        
+
+        }
+        
     }
     
     //=======renderShounen=========//

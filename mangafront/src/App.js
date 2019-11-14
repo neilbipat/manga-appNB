@@ -97,6 +97,9 @@ class App extends Component{
           alert(`Please Sign in`);
         }
       })
+      .catch(error => {
+        console.log(error);
+      })
   }
 
   //===The 3 are for signup===//
