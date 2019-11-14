@@ -126,14 +126,16 @@ class App extends Component{
     this.setState({passwordLog: e.target.value})
   }
 
-  
+  //Logout function===//
+  logOut = () => {
+    window.location.reload();
+  }
 
 
   render(){
     return (
       <div className="App">
         {this.state.apiLoaded}
-        
         <SignupForm
         username ={this.state.username}
         email ={this.state.email}
@@ -149,6 +151,8 @@ class App extends Component{
         handleNameLogChange={this.handleNameLogChange}
         handlePasswordLogChange={this.handlePasswordLogChange}
         loginForm={(e) => this.submitLoginForm(e)} />
+
+        <button onClick={this.logOut}>Log out</button>
 
         <Shounen
           token = {this.state.token}

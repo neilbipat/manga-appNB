@@ -15,7 +15,7 @@ class UserList extends Component {
 
    showUserList =(e) => {
        e.preventDefault();
-       if (this.props.token === ""){
+       if (this.props.token === "" || this.props.token === undefined){
            alert(`Please Sign in`)
        } else{
 

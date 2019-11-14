@@ -81,7 +81,7 @@ class Shounen extends Component {
 
     addToUserList =(mangaTitle) => {
         console.log("TOKEN", this.props.token)
-        if (this.props.token === "") {
+        if (this.props.token === "" || this.props.token === undefined) {
 
             alert(`Please Sign in`)
         } else {
@@ -95,10 +95,6 @@ class Shounen extends Component {
                 "Authorization": "Bearer " + this.props.token  
             }
         })
-
-        
-            
-    
 
             .then(res => res.json())
             .then(res => {
