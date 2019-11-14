@@ -14,6 +14,7 @@ const Login = styled.form`
 const Button = styled.input`
     width: 30%;
     margin-left: 68%;
+    font-family: 'McLaren', cursive;
 
     &: hover {
         color: white;
@@ -26,7 +27,7 @@ const Button = styled.input`
 
 // Styling Password
 const Password = styled.label`
-    margin-left: 0.5%;
+    margin-left: 0.1%;
 `;
 
 const LoginForm = props => {
@@ -51,7 +52,7 @@ const LoginForm = props => {
                 onChange={props.handlePasswordLogChange}
             />
             </Password>
-            <Button type="submit" value="resume"/>
+            <Button type="submit" value="Log In"/>
 
             </Login>
         </div>

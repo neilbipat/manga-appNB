@@ -17,20 +17,22 @@ const Email = styled.label`
 
 // Styling Password
 const Password = styled.label`
-    margin-left: 0.5%;
 `;
 
 // Styling the signupButton
 const Button = styled.input`
     width: 30%;
     margin-left: 68%;
-
-    &: hover {
+    font-family: 'McLaren', cursive;
+    
+    
+    &:hover {
         color: white; 
         background-color: grey;
     }
     /* This is for cenering the button */
     /* margin: 0 auto; */
+    
 `;
 
 
@@ -70,7 +72,7 @@ const SignupForm = props => {
                 onChange={props.handlePasswordChange}
             />
             </Password>
-            <Button type="submit" value="create"/>
+            <Button type="submit" value="Sign In"/>
         </Signup> 
         </div>
     )

@@ -41,6 +41,7 @@ const Button =styled.button`
     width: 40%;
     margin-top: 5%;
     margin-left: 28%;
+    font-family: 'McLaren', cursive;
    
 
     /* Hover */

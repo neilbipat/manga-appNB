@@ -24,6 +24,7 @@ const LogOutButton = styled.button`
   width: 8%;
   height: 5%;
   border-radius: 5px;
+  font-family: 'McLaren', cursive;
 
   /* Hover */
   &: hover {
@@ -39,11 +40,13 @@ const BodyDiv = styled.div`
   display: flex;
   justify-content: center;
   justify-content: space-around;
+  font-family: 'McLaren', cursive;
 `;
 
 // BigDiv
 const BigDiv = styled.div `
   background-color: lightgoldenrodyellow;
+  font-family: 'McLaren', cursive;
 `;
 
 

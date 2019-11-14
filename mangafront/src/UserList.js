@@ -20,6 +20,7 @@ import styled from 'styled-components';
     const ShowList = styled.button`
         width: 5vw;
         margin-bottom: 2%;
+        font-family: 'McLaren', cursive;
 
         &: hover {
             color: white;
@@ -33,6 +34,7 @@ import styled from 'styled-components';
         width: 40%;
         margin-left: 30%;
         margin-top: 4%;
+        font-family: 'McLaren', cursive;
 
         &: hover {
             color: white-space;
