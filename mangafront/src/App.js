@@ -10,7 +10,11 @@ import UserList from './UserList';
 
 // SignAndLogInDiv
 const SignAndLogInDiv =styled.div`
+  /* Hover the button */
+
   display:flex;
+  justify-content: space-around;
+  margin-top: 1%;
 `;
 
 
@@ -18,7 +22,20 @@ const SignAndLogInDiv =styled.div`
 const LogOutButton = styled.button`
   width: 8%;
   height: 5%;
+  border-radius: 5px;
+
+  &: hover {
+    color: white;
+    background-color: grey;
+  }
+  
 `;
+
+const BodyDiv = styled.div`
+  display: flex;
+`;
+
+
 
 class App extends Component{
 
@@ -160,13 +177,14 @@ class App extends Component{
         <LogOutButton onClick={this.logOut}>Log out</LogOutButton>
         </SignAndLogInDiv>
 
+        <BodyDiv>
         <Shounen
           token = {this.state.token}
         />
         <UserList
           token = {this.state.token}
         />
-             
+        </BodyDiv>      
       </div>
        
     );

@@ -12,7 +12,7 @@ const Signup = styled.form`
 
 // Styling Email
 const Email = styled.label`
-    margin-left: 5%;
+    margin-left: 16%;
 `;
 
 // Styling Password
@@ -22,8 +22,13 @@ const Password = styled.label`
 
 // Styling the signupButton
 const Button = styled.input`
-    width: 10%;
-    margin-left: 19%;
+    width: 30%;
+    margin-left: 68%;
+
+    &: hover {
+        color: white; 
+        background-color: grey;
+    }
     /* This is for cenering the button */
     /* margin: 0 auto; */
 `;

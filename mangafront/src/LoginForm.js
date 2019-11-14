@@ -12,8 +12,14 @@ const Login = styled.form`
 
 // Styling the signupButton
 const Button = styled.input`
-    width: 10%;
-    margin-left: 19%;
+    width: 30%;
+    margin-left: 68%;
+
+    &: hover {
+        color: white;
+        background-color: grey;
+    }
+
     /* This is for cenering the button */
     /* margin: 0 auto; */
 `;

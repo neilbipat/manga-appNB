@@ -114,8 +114,8 @@ class Shounen extends Component {
             return <div key = {key}>
                 <p>{manga.a}</p>
                 <button onClick={() => this.addToUserList(manga.a)} className="item">Add to list?</button>
-                <a target="_blank" href={`https://www.mangaeden.com/en/en-manga/${manga.a}/`}>View manga here</a>
-            </div>
+                <a target="_blank" href={`https://www.mangaeden.com/en/en-manga/${manga.a}`}>View manga here</a>
+                </div>
         })
     }
 
