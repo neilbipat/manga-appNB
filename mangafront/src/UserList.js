@@ -5,11 +5,14 @@ class UserList extends Component {
         super(props);
 
         this.state = {
-            title: ""
+            apiDataLoaded: false,
+            apiDataError: false,
+            title: []
         }
     }
 
-    componentDidMount() {
+   showUserList =(e) => {
+       e.preventDefault();
             console.log(this.props.token, "using token in shounen");
             fetch(`http://localhost:8081/get/listUserMangas/`, {
                 method: 'GET',
@@ -19,24 +22,35 @@ class UserList extends Component {
                     "Authorization": "Bearer " + this.props.token
                 }
             })
-                .then(res => res.json())
-                .then(res => {
-
-                    console.log(res, "User's mangas is shown!")
+            .then(res => {
+              return  res.json();
+            })
+            .then((res) => {
+                this.setState({
+                    title: res
                 })
+
+                
+
+                    console.log(this.state.title, "User's mangas is shown!")
+                })
+       
             .catch(err => {
                 console.log(err);
                 this.setState({apiDataError: true})
-            })
-        
+            })   
     }
 
-   
+
     
     render() {
         return (
             <div>
                 <h1>Your List</h1>
+                <button onClick={this.showUserList}></button>
+                {this.state.title.map((manga, key) => {
+                    return <p key={key}>{manga.title}</p>
+                })}
             </div>
         )
     }
