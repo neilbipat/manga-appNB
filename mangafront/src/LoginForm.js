@@ -18,6 +18,11 @@ const Button = styled.input`
     /* margin: 0 auto; */
 `;
 
+// Styling Password
+const Password = styled.label`
+    margin-left: 0.5%;
+`;
+
 const LoginForm = props => {
     return (
         <div className = "Login Form"> 
@@ -31,7 +36,7 @@ const LoginForm = props => {
             />
             </label>
 
-            <label htmlFor="password">Password:
+            <Password htmlFor="password">Password:
             <input
                 type="text"
                 placeholder="password"
@@ -39,7 +44,7 @@ const LoginForm = props => {
                 value={props.passwordLog}
                 onChange={props.handlePasswordLogChange}
             />
-            </label>
+            </Password>
             <Button type="submit" value="resume"/>
 
             </Login>

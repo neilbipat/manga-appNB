@@ -8,12 +8,16 @@ import SignupForm from './SignupForm';
 import LoginForm from './LoginForm';
 import UserList from './UserList';
 
-const Nav = styled.nav`
-width: 100%;
-display: flex;
-justify-content: center;
-height: 100px;
-align-items: center;
+// SignAndLogInDiv
+const SignAndLogInDiv =styled.div`
+  display:flex;
+`;
+
+
+// Logout Button
+const LogOutButton = styled.button`
+  width: 8%;
+  height: 5%;
 `;
 
 class App extends Component{
@@ -135,6 +139,7 @@ class App extends Component{
   render(){
     return (
       <div className="App">
+        <SignAndLogInDiv>
         {this.state.apiLoaded}
         <SignupForm
         username ={this.state.username}
@@ -152,7 +157,8 @@ class App extends Component{
         handlePasswordLogChange={this.handlePasswordLogChange}
         loginForm={(e) => this.submitLoginForm(e)} />
 
-        <button onClick={this.logOut}>Log out</button>
+        <LogOutButton onClick={this.logOut}>Log out</LogOutButton>
+        </SignAndLogInDiv>
 
         <Shounen
           token = {this.state.token}
