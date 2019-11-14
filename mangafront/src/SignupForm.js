@@ -22,7 +22,7 @@ const SignupForm = props => {
                 placeholder="email"
                 label="email"
                 value={props.email}
-                onChange={props.handleEmailChange}/>
+                onChange={props.handleEmailChange}
             />
             </label>
 
@@ -32,7 +32,7 @@ const SignupForm = props => {
                 placeholder="password"
                 label="password"
                 value={props.password}
-                onChange={props.handlePasswordChange} />
+                onChange={props.handlePasswordChange}
             />
             </label>
             <input type="submit" value="create"/>

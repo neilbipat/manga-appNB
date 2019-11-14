@@ -1,11 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-// import {
-//   BrowserRouter as Router,
-//   Link,
-//   Switch,
-//   Route
-// } from "react-router-dom";
 
 // custom components
 import Shounen from './Shounen';
@@ -21,14 +15,6 @@ justify-content: center;
 height: 100px;
 align-items: center;
 `;
-
-// const Links = styled(Link)`
-// width: 100%;
-// display: flex;
-// justify-content: center;
-// height: 100px;
-// align-items: center;
-// `;
 
 class App extends Component{
 
@@ -138,8 +124,7 @@ class App extends Component{
     return (
       <div className="App">
         {this.state.apiLoaded}
-        )
-      }
+        
         <SignupForm
         username ={this.state.username}
         email ={this.state.email}
