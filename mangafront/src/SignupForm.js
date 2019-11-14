@@ -63,7 +63,7 @@ const SignupForm = props => {
 
             <Password htmlFor="password"> Password:
             <input
-                type="text"
+                type="password"
                 placeholder="password"
                 label="password"
                 value={props.password}

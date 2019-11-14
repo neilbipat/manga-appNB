@@ -1,5 +1,79 @@
 import React, {Component}from 'react';
 
+// custom componenets
+import styled from 'styled-components';
+    
+// const ReadingList
+    const ReadingList = styled.div`
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    `;
+
+    //YourList
+    const YourList = styled.h1`
+    text-align: center;
+        
+    `
+
+// const ShowList
+    const ShowList = styled.button`
+        width: 5vw;
+        margin-bottom: 2%;
+
+        &: hover {
+            color: white;
+            background-color: grey;
+        }
+
+    `;
+
+// const Delete
+    const Delete = styled.button `
+        width: 40%;
+        margin-left: 30%;
+        margin-top: 4%;
+
+        &: hover {
+            color: white-space;
+            background-color: grey;
+        }
+    `;
+
+    // Title
+
+    const Title = styled.p`
+        text-align: center;
+
+        /* margin-right: 20%; */
+    `;
+
+// Hyperlink
+    const Hyperlink = styled.a`
+        text-decoration: none;
+        text-align: center;
+        margin-left: 30%;
+        margin-bottom: 6%;
+
+        color: black;
+        
+
+        &: hover {
+            color: blue;
+            cursor: pointer;
+        }
+    `;
+
+// Card
+    const Card = styled.div`
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-bottom: 3%;
+        width: 30vw;
+        max-width: 70%;
+        height: 1%;
+    `;
+
 class UserList extends Component {
     constructor(props) {
         super(props);
@@ -78,18 +152,18 @@ class UserList extends Component {
     
     render() {
         return (
-            <div>
-                <h1>Your List</h1>
-                <button onClick={this.showUserList}></button>
+            <ReadingList>
+                <YourList>Your List</YourList>
+                <ShowList onClick={this.showUserList}>Your List</ShowList>
                 {this.state.title.map((manga, key) => {
-                    return <div key={key}>
-                    <p>{manga.title}</p>
-                        <a target="_blank" href={`https://www.mangaeden.com/en/en-manga/${manga.title}/`}>View manga here</a>
-                    <button onClick={() => this.deleteFromUserList(manga.title)}></button>
-                    </div>
+                    return <Card key={key}>
+                        <Title>{manga.title}</Title>
+                        <Hyperlink target="_blank" href={`https://www.mangaeden.com/en/en-manga/${manga.title}/`}>View manga here</Hyperlink>
+                        <Delete onClick={() => this.deleteFromUserList(manga.title)}>Delete</Delete>
+                    </Card>
                     
                 })}
-            </div>
+            </ReadingList>
         )
     }
 

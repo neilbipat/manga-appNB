@@ -57,6 +57,7 @@ class App extends Component{
       token: "",
       usernameLog: "",
       passwordLog: "",
+      name: "",
 
     }
   }
@@ -186,6 +187,7 @@ class App extends Component{
 
         <BodyDiv>
         <Shounen
+        
           token = {this.state.token}
         />
         <UserList

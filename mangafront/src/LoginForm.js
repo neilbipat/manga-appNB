@@ -44,7 +44,7 @@ const LoginForm = props => {
 
             <Password htmlFor="password">Password:
             <input
-                type="text"
+                type="password"
                 placeholder="password"
                 label="password"
                 value={props.passwordLog}
