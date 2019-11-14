@@ -1,9 +1,20 @@
 import React from 'react';
 
+// custom componeents
+import styled from 'styled-components';
+
+// Styling Signup
+const Login = styled.form`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1%;
+`;
+
+
 const LoginForm = props => {
     return (
         <div className = "Login Form"> 
-        <form onSubmit={props.loginForm}>
+        <Login onSubmit={props.loginForm}>
             <label htmlFor="username">Username:
             <input
                 type="text"
@@ -24,7 +35,7 @@ const LoginForm = props => {
             </label>
             <input type="submit" value="resume"/>
 
-            </form>
+            </Login>
         </div>
     )
 }

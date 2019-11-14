@@ -3,8 +3,29 @@ import React from 'react';
 // custom components
 import styled from 'styled-components';
 
-const Signup = styled.div`
-    text-align: center;
+// Styling Signup
+const Signup = styled.form`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1%;
+`;
+
+// Styling Email
+const Email = styled.label`
+    margin-left: 5%;
+`;
+
+// Styling Password
+const Password = styled.label`
+    margin-left: 0.5%;
+`;
+
+// Styling the signupButton
+const Button = styled.input`
+    width: 10%;
+    margin-left: 19%;
+    /* This is for cenering the button */
+    /* margin: 0 auto; */
 `;
 
 
@@ -12,8 +33,8 @@ const Signup = styled.div`
 const SignupForm = props => {
     return(
 
-        <Signup>
-           <form onSubmit={props.submitForm}>
+        <div>
+           <Signup onSubmit={props.submitForm}>
 
             <label htmlFor="username">Username:
             <input
@@ -25,7 +46,7 @@ const SignupForm = props => {
             />
             </label>
 
-            <label htmlFor="email"> Email:
+            <Email htmlFor="email"> Email:
             <input
                 type="text"
                 placeholder="email"
@@ -33,9 +54,9 @@ const SignupForm = props => {
                 value={props.email}
                 onChange={props.handleEmailChange}
             />
-            </label>
+            </Email>
 
-            <label htmlFor="password"> Password:
+            <Password htmlFor="password"> Password:
             <input
                 type="text"
                 placeholder="password"
@@ -43,10 +64,10 @@ const SignupForm = props => {
                 value={props.password}
                 onChange={props.handlePasswordChange}
             />
-            </label>
-            <input type="submit" value="create"/>
-        </form> 
-        </Signup>
+            </Password>
+            <Button type="submit" value="create"/>
+        </Signup> 
+        </div>
     )
 }
 
