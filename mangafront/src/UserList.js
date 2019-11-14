@@ -41,6 +41,29 @@ class UserList extends Component {
             })   
     }
 
+        deleteFromUserList =(mangaTitle) => {
+           
+            fetch(`http://localhost:8081/delete/${mangaTitle}/`, {
+                method: 'DELETE',
+                headers: {
+                    'Accept': 'application/json, tex/plain, */*',
+                    'Content-Type' : 'application/json',
+                    "Authorization": "Bearer " + this.props.token
+                }
+            })
+                .then(res => res.json())
+                .then(res => {
+                    let updateList = this.state.title;
+                    let index = this.state.title.indexOf(updateList);
+                    console.log(index)
+                    updateList.splice(index, 1);
+                    console.log(updateList);
+                    this.setState({
+                        title: updateList
+                    })
+                    console.log(res, "I got a response")
+                })
+        }
 
     
     render() {
@@ -49,7 +72,11 @@ class UserList extends Component {
                 <h1>Your List</h1>
                 <button onClick={this.showUserList}></button>
                 {this.state.title.map((manga, key) => {
-                    return <p key={key}>{manga.title}</p>
+                    return <div key={key}>
+                    <p>{manga.title}</p>
+                    <button onClick={() => this.deleteFromUserList(manga.title)}></button>
+                    </div>
+                    
                 })}
             </div>
         )
