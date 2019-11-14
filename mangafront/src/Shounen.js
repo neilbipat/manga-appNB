@@ -108,27 +108,27 @@ class Shounen extends Component {
                     apiDataLoaded: true,
                     data: res
                 })
-                // shounenArr.map(shounenManga => {
-                //     fetch(`http://localhost:8081/manga/add`, {
-                //         method: 'POST',
-                //         headers: {
-                //             'Accept': 'application/json, text/plain, */*',
-                //             'Content-Type': 'application/json'
-                //         },
-                //         body: JSON.stringify({
-                //             title: shounenManga.a
-                //         })
-                //     })
-                //         .then(res => {
-                //             return res.json()
-                //         })
-                //         .then(res => {
-                //             console.log(res)
-                //         })
-                //         .catch(error => {
-                //             console.log(error);
-                //         })
-                // })
+                shounenArr.map(shounenManga => {
+                    fetch(`http://localhost:8081/manga/add`, {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json, text/plain, */*',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            title: shounenManga.a
+                        })
+                    })
+                        .then(res => {
+                            return res.json()
+                        })
+                        .then(res => {
+                            console.log(res)
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        })
+                })
             })
             .catch(err => {
                 console.log(err);
