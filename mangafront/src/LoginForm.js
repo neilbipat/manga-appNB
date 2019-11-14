@@ -10,6 +10,13 @@ const Login = styled.form`
     margin-bottom: 1%;
 `;
 
+// Styling the signupButton
+const Button = styled.input`
+    width: 10%;
+    margin-left: 19%;
+    /* This is for cenering the button */
+    /* margin: 0 auto; */
+`;
 
 const LoginForm = props => {
     return (
@@ -33,7 +40,7 @@ const LoginForm = props => {
                 onChange={props.handlePasswordLogChange}
             />
             </label>
-            <input type="submit" value="resume"/>
+            <Button type="submit" value="resume"/>
 
             </Login>
         </div>
