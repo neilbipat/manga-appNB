@@ -109,7 +109,7 @@ class Shounen extends Component {
                     data: res
                 })
                 shounenArr.map(shounenManga => {
-                    fetch(`http://3.80.126.38/manga/add`, {
+                    fetch(`http://3.80.126.38:8081/manga/add`, {
                         method: 'POST',
                         headers: {
                             'Accept': 'application/json, text/plain, */*',
@@ -148,7 +148,7 @@ class Shounen extends Component {
         } else {
 
         console.log(this.props.token, "using token in shounen");
-            fetch(`http://3.80.126.38/add/${mangaTitle}/`, {
+            fetch(`http://3.80.126.38:8081/add/${mangaTitle}/`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
