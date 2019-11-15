@@ -98,7 +98,7 @@ class UserList extends Component {
 
        
             console.log(this.props.token, "using token in shounen");
-            fetch(`http://localhost:8081/get/listUserMangas/`, {
+           fetch(`http://3.80.126.38/get/listUserMangas/`, {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json, text/plain, */*',
@@ -128,7 +128,7 @@ class UserList extends Component {
 
         deleteFromUserList =(mangaTitle) => {
            
-            fetch(`http://localhost:8081/delete/${mangaTitle}/`, {
+            fetch(`http://3.80.126.38/delete/${mangaTitle}/`, {
                 method: 'DELETE',
                 headers: {
                     'Accept': 'application/json, tex/plain, */*',

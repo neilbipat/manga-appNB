@@ -75,7 +75,7 @@ class App extends Component{
 
   submitSignupForm = (e) => {
     e.preventDefault();
-    fetch("http://localhost:8081/signup", {
+    fetch("http://3.80.126.38:8081/signup", {
       method: 'POST',
       headers: {
         'Accept': 'application/json, text/plain , */*',
@@ -110,7 +110,7 @@ class App extends Component{
   
   submitLoginForm = (e) => {
     e.preventDefault();
-    fetch("http://localhost:8081/login", {
+    fetch("http://3.80.126.38/login", {
       method: 'POST',
       headers: {
         'Accept' : 'application/json, text/plain, */*',
