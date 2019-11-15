@@ -14,7 +14,15 @@ Backend
 •	Docker
 •	PostgresSQL
 
+<<<<<<< HEAD
 API & Database 
+=======
+Initial ERD diagram, but later changed it to a join table. 
+
+
+
+API & Database Structure now
+>>>>>>> 6dc7f8c7354f4cfe6ee9198137b56ba32bc1c66f
 
 Models and Table Information
 •	Manga-App’s database has two main models User and Manga
