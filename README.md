@@ -1,7 +1,8 @@
-## MANGA-APP 
+# MANGA-APP 
 
-A Manga Reading List using an eternal api from MangaEden.com 
-MangaEden’s API  documentation - https://www.mangaeden.com/api/
+## A Manga Reading List using an external api from MangaEden.com 
+
+### MangaEden’s API  documentation - **https://www.mangaeden.com/api/**
 
 Technologies: 
 
