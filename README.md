@@ -4,14 +4,25 @@
 
 ** MangaEden’s API  documentation - https://www.mangaeden.com/api/**
 
-Technologies: 
+--------------------------------------------------------------------------
+
+ ### Technologies
 
 Frontend
-- React 
+- React.js 
+    . npm create react-app appName
+    . npm install --save styled-components
 
-Backend
-- Java
+Backend(MicroServices) - Recommondation - Use Spring Initiliazer website to create your apps with the dependencies listed. 
+
+- Java(Apps)
+    - eureka-server(dependencies)
+        . spring cloud starter netflix eureka client
+        . spring cloud starter netflix zuul
+        . spring boot starter test
+    - 
 -	Docker
+
 -	PostgresSQL
 
 
