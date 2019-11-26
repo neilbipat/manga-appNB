@@ -2,7 +2,7 @@
 
 ### A Manga Reading List using an external api from MangaEden.com 
 
-** MangaEden’s API  documentation - https://www.mangaeden.com/api/**
+ MangaEden’s API  documentation - https://www.mangaeden.com/api/
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
