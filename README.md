@@ -46,6 +46,7 @@ Spring Initiliazer Website - https://start.spring.io/
         - spring security test
   
 ### Notes
+
     Make sure you have a docker-compose.yml file that is global to all of yours backend apps, like how my file structure looks like when you first come to the repository. Also make sure after creating your apps, the structure on the yml file is the same as I would have it. 
 
 -------------------------------------------------------------------------------------------------------------------------------------
