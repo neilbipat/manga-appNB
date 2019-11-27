@@ -10,8 +10,8 @@
 
 #### Frontend
 - React.js 
-    . npm create react-app appName
-    . npm install --save styled-components
+    - npm create react-app appName
+    - npm install --save styled-components
 
 #### Backend
 -Docker
