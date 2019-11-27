@@ -14,9 +14,9 @@
     - npm install --save styled-components
 
 #### Backend
--Docker
--PostgresSQL
--MicroServices(Recommondation) - Use Spring Initiliazer website to create your apps with the dependencies listed. 
+- Docker
+- PostgresSQL
+- MicroServices(Recommondation) - Use Spring Initiliazer website to create your apps with the dependencies listed. 
 
 Spring Initiliazer Website - https://start.spring.io/
 
